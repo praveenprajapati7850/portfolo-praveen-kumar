@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" width="1200" height="840">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+
+  <rect width="1200" height="840" fill="#ffffff"/>
+
+  <!-- Red Border Frame -->
+  <rect x="25" y="25" width="1150" height="790" fill="none" stroke="#e11938" stroke-width="10"/>
+  <rect x="36" y="36" width="1128" height="768" fill="none" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Top Logos Row -->
+  <!-- Left: VI Vodafone Idea Foundation -->
+  <g transform="translate(100, 75)">
+    <text x="0" y="45" fill="#e11938" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="900" letter-spacing="-1">VI</text>
+    <circle cx="56" cy="48" r="6" fill="#f59e0b"/>
+    <text x="0" y="78" fill="#e11938" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700">Vodafone Idea Foundation</text>
+  </g>
+
+  <!-- Center: VOIS -->
+  <text x="600" y="115" text-anchor="middle" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="48" font-weight="800" letter-spacing="4">VOIS</text>
+
+  <!-- Right: Edunet Foundation -->
+  <g transform="translate(900, 75)">
+    <text x="0" y="45" fill="#1e3a8a" font-family="'Plus Jakarta Sans', sans-serif" font-size="40" font-weight="800">edunet</text>
+    <circle cx="145" cy="18" r="4" fill="#f97316"/>
+    <text x="75" y="65" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600">foundation</text>
+  </g>
+
+  <!-- Certificate Title -->
+  <text x="600" y="270" text-anchor="middle" font-family="'Cinzel', serif" font-size="44" font-weight="700" fill="#1e293b">Certificate of Completion</text>
+
+  <!-- Presented to -->
+  <text x="600" y="335" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="500" fill="#64748b">Presented to</text>
+
+  <!-- Candidate Name -->
+  <text x="600" y="405" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="800" fill="#e11938">Praveen Kumar</text>
+  <line x1="320" y1="430" x2="880" y2="430" stroke="#e11938" stroke-width="3"/>
+
+  <!-- Completion Details -->
+  <text x="600" y="485" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="500" fill="#334155">For the successful completion of</text>
+
+  <text x="600" y="545" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="800" fill="#0f172a">Data Visualization</text>
+
+  <text x="600" y="595" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="600" fill="#475569">Issued on  <tspan font-weight="700" fill="#0f172a">August 14, 2026</tspan></text>
+
+  <text x="600" y="635" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="600" fill="#64748b">ID: <tspan font-weight="700" fill="#0f172a">VFLMS26_163709</tspan></text>
+
+  <!-- Bottom Left: QR Code Mockup -->
+  <g transform="translate(100, 640)">
+    <rect width="110" height="110" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
+    <!-- QR Finder patterns -->
+    <rect x="10" y="10" width="30" height="30" fill="#1e293b"/>
+    <rect x="16" y="16" width="18" height="18" fill="#ffffff"/>
+    <rect x="20" y="20" width="10" height="10" fill="#1e293b"/>
+
+    <rect x="70" y="10" width="30" height="30" fill="#1e293b"/>
+    <rect x="76" y="16" width="18" height="18" fill="#ffffff"/>
+    <rect x="80" y="20" width="10" height="10" fill="#1e293b"/>
+
+    <rect x="10" y="70" width="30" height="30" fill="#1e293b"/>
+    <rect x="16" y="76" width="18" height="18" fill="#ffffff"/>
+    <rect x="20" y="80" width="10" height="10" fill="#1e293b"/>
+
+    <!-- QR Data points -->
+    <rect x="48" y="15" width="6" height="6" fill="#1e293b"/>
+    <rect x="58" y="25" width="6" height="6" fill="#1e293b"/>
+    <rect x="48" y="35" width="6" height="6" fill="#1e293b"/>
+    <rect x="50" y="55" width="8" height="8" fill="#1e293b"/>
+    <rect x="70" y="65" width="6" height="6" fill="#1e293b"/>
+    <rect x="85" y="75" width="8" height="8" fill="#1e293b"/>
+    <rect x="75" y="85" width="6" height="6" fill="#1e293b"/>
+  </g>
+
+  <!-- Bottom Right: Rosette Course Completion Badge -->
+  <g transform="translate(1000, 680)">
+    <!-- Rosette ribbon tails -->
+    <polygon points="-25,45 -35,80 -15,70 5,80 -5,45" fill="#e11938"/>
+    <polygon points="5,45 -5,80 15,70 35,80 25,45" fill="#e11938"/>
+    <!-- Rosette scalloped seal -->
+    <circle cx="0" cy="15" r="50" fill="#e11938"/>
+    <circle cx="0" cy="15" r="42" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,2"/>
+    <circle cx="0" cy="15" r="38" fill="#ffffff"/>
+    <text x="0" y="5" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="800" fill="#e11938">COURSE</text>
+    <text x="0" y="18" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#e11938">★</text>
+    <text x="0" y="28" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="800" fill="#e11938">COMPLETION</text>
+  </g>
+</svg>

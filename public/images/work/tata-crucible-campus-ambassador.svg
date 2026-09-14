@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Cinzel:wght@700;800&amp;display=swap');
+      .sans { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+      .cinzel { font-family: 'Cinzel', serif; }
+    </style>
+    <linearGradient id="yellowBanner" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbb03b"/>
+      <stop offset="50%" stop-color="#ffd000"/>
+      <stop offset="100%" stop-color="#fbb03b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="850" fill="#ffffff"/>
+
+  <!-- Decorative Border Accents -->
+  <!-- Top Left Corner Graphic -->
+  <polygon points="0,0 200,0 120,40 40,120 0,200" fill="#4338ca" opacity="0.95"/>
+  <polygon points="0,0 150,0 0,150" fill="#6366f1" opacity="0.6"/>
+  <path d="M 20 20 L 160 20 L 20 160 Z" fill="#312e81" opacity="0.8"/>
+
+  <!-- Top Right Corner Graphic -->
+  <polygon points="1200,0 1000,0 1080,40 1160,120 1200,200" fill="#4338ca" opacity="0.95"/>
+  <polygon points="1200,0 1050,0 1200,150" fill="#6366f1" opacity="0.6"/>
+
+  <!-- Bottom Left Corner Graphic -->
+  <polygon points="0,850 200,850 120,810 40,730 0,650" fill="#4338ca" opacity="0.95"/>
+  <polygon points="0,850 150,850 0,700" fill="#6366f1" opacity="0.6"/>
+
+  <!-- Bottom Right Corner Graphic -->
+  <polygon points="1200,850 1000,850 1080,810 1160,730 1200,650" fill="#4338ca" opacity="0.95"/>
+  <polygon points="1200,850 1050,850 1200,700" fill="#6366f1" opacity="0.6"/>
+
+  <!-- Framing Border line -->
+  <rect x="25" y="25" width="1150" height="800" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.4" rx="4"/>
+
+  <!-- Top Left: INTERNSHALA logo -->
+  <g transform="translate(80, 75)">
+    <path d="M 0 16 L 32 0 L 16 32 L 14 18 Z" fill="#008bd3"/>
+    <path d="M 14 18 L 32 0 L 22 22 Z" fill="#00a5f0"/>
+    <text x="42" y="24" fill="#008bd3" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="1">INTERNSHALA</text>
+  </g>
+
+  <!-- Top Right: TATA CRUCIBLE logo -->
+  <g transform="translate(930, 65)">
+    <text x="80" y="22" text-anchor="middle" fill="#004b87" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="800" letter-spacing="2">TATA</text>
+    <!-- Flame icon -->
+    <path d="M 152 24 C 152 14, 160 8, 163 2 C 166 8, 174 14, 174 24 C 174 30, 168 34, 163 34 C 158 34, 152 30, 152 24 Z" fill="#f58220"/>
+    <text x="110" y="46" text-anchor="middle" fill="#222222" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="1.5">CRUCIBLE</text>
+    <text x="110" y="64" text-anchor="middle" fill="#555555" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" letter-spacing="3">THE CAMPUS QUIZ</text>
+  </g>
+
+  <!-- Yellow Certificate of Appreciation Banner -->
+  <g transform="translate(150, 195)">
+    <!-- Banner Ribbons Endpoints -->
+    <polygon points="0,30 -20,0 20,0 0,60" fill="#d97706"/>
+    <polygon points="900,30 920,0 880,0 900,60" fill="#d97706"/>
+    <!-- Main Banner Box -->
+    <polygon points="0,0 900,0 870,70 30,70" fill="url(#yellowBanner)" filter="drop-shadow(0px 4px 6px rgba(0,0,0,0.1))"/>
+    <text x="450" y="48" text-anchor="middle" fill="#1e1b4b" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="800" letter-spacing="4">CERTIFICATE OF APPRECIATION</text>
+  </g>
+
+  <!-- Presentation Text -->
+  <text x="600" y="370" text-anchor="middle" fill="#374151" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="500">This is to certify that</text>
+
+  <!-- Candidate Name -->
+  <text x="600" y="435" text-anchor="middle" fill="#111827" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="800">Praveen kumar</text>
+
+  <!-- University -->
+  <text x="600" y="490" text-anchor="middle" fill="#4b5563" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="500">from</text>
+  <text x="600" y="530" text-anchor="middle" fill="#111827" font-family="'Plus Jakarta Sans', sans-serif" font-size="26" font-weight="700">Pondicherry University</text>
+
+  <!-- Description Body -->
+  <text x="600" y="600" text-anchor="middle" fill="#374151" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="500">
+    <tspan x="600" dy="0">served as a <tspan font-weight="700" fill="#111827">Tata Crucible Campus Ambassador</tspan> under the <tspan font-weight="700" fill="#111827">Tata Crucible Campus</tspan></tspan>
+    <tspan x="600" dy="36"><tspan font-weight="700" fill="#111827">Ambassador Programme</tspan>. Your dedication and efforts in driving student engagement</tspan>
+    <tspan x="600" dy="36">and promoting the initiative across campuses are sincerely appreciated.</tspan>
+  </text>
+</svg>

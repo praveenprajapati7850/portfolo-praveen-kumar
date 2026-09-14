@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #fe4300;
+    --primary-foreground: #ffffff;
+    --muted: #ffffff;
+    --muted-foreground: #737373;
+    --border: #e5e5e5;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+  }
+
+  html, body {
+    background-color: #ffffff !important;
+    color: #0a0a0a;
+    font-family: 'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+  @media (min-width: 640px) { h1 { font-size: 3.75rem; } }
+  @media (min-width: 1024px) { h1 { font-size: 4.75rem; } }
+  @media (min-width: 1280px) { h1 { font-size: 85px; } }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: #000000;
+  }
+  @media (min-width: 768px) { h2 { font-size: 3.25rem; } }
+  @media (min-width: 1024px) { h2 { font-size: 65px; } }
+
+  h3 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000000;
+  }
+  @media (min-width: 768px) { h3 { font-size: 2.5rem; } }
+  @media (min-width: 1024px) { h3 { font-size: 3.25rem; } }
+
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    color: #4b5563;
+  }
+  @media (min-width: 768px) { h4 { font-size: 1.25rem; } }
+
+  h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #000000;
+  }
+  @media (min-width: 768px) { h5 { font-size: 1.5rem; } }
+}
+
+/* Custom Signature Button Fill Animation */
+.resume-btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 9999px;
+  border: 1px solid #fe4300;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-btn::before {
+  content: "";
+  z-index: 0;
+  background-color: #fe4300;
+  width: 100%;
+  height: 0%;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.resume-btn:hover::before {
+  height: 100%;
+}
+
+/* Wave Animation */
+.wave {
+  transform-origin: 70% 70%;
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Print styling for perfect PDF output */
+@media print {
+  body {
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+  header, footer, .navbar, .no-print, .edit-drawer {
+    display: none !important;
+  }
+  main {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  * {
+    box-shadow: none !important;
+  }
+  html, body {
+    height: auto;
+    overflow: visible;
+  }
+  .hero-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  .break-page {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+

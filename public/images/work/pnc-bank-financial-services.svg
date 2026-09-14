@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="#ffffff"/>
+
+  <!-- PNC Bank Logo -->
+  <g transform="translate(80, 75)">
+    <circle cx="28" cy="28" r="24" fill="#ff5e00"/>
+    <polygon points="20,18 38,28 20,38" fill="#ffffff"/>
+    <text x="65" y="37" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="800" fill="#002d62">PNC BANK</text>
+  </g>
+
+  <!-- Top Right Forage Header Ribbon -->
+  <path d="M 850 0 L 1200 0 L 1200 210 L 970 210 Z" fill="#e11938"/>
+  <g transform="translate(900, 45)">
+    <path d="M 15 5 L 35 25 L 20 40 L 40 45 L 25 60 L 5 40 Z" fill="#ffffff"/>
+    <text x="50" y="42" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="800" letter-spacing="-0.5">Forage</text>
+    <text x="40" y="85" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="600" opacity="0.95">Inspiring and</text>
+    <text x="40" y="103" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="600" opacity="0.95">empowering</text>
+    <text x="40" y="121" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5" font-weight="600" opacity="0.95">future professionals</text>
+  </g>
+
+  <!-- Candidate Name -->
+  <text x="80" y="325" fill="#111827" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="800">Praveen Kumar</text>
+
+  <!-- Course Title -->
+  <text x="80" y="380" fill="#1f2937" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="800">Overview of Financial Services and Banking</text>
+  <text x="80" y="420" fill="#1f2937" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="800">Job Simulation</text>
+
+  <!-- Certificate Type -->
+  <text x="80" y="475" fill="#4b5563" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="500">Certificate of Completion</text>
+  <text x="80" y="508" fill="#6b7280" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="500">April 24th, 2026</text>
+
+  <!-- Tasks Section -->
+  <text x="80" y="595" fill="#374151" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600">Over the period of April 2026, Praveen Kumar has completed practical tasks in:</text>
+  <text x="80" y="626" fill="#4b5563" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5">Exploring the financial services industry</text>
+  <text x="80" y="648" fill="#4b5563" font-family="'Plus Jakarta Sans', sans-serif" font-size="13.5">Banking in focus</text>
+
+  <!-- Signature -->
+  <g transform="translate(950, 600)">
+    <path d="M 20 30 Q 50 5 80 35 T 140 25" stroke="#1f2937" stroke-width="1.8" fill="none"/>
+    <path d="M 50 15 L 75 45" stroke="#1f2937" stroke-width="1.5" fill="none"/>
+    <text x="80" y="65" text-anchor="middle" fill="#1f2937" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700">Tom Brunskill</text>
+    <text x="80" y="85" text-anchor="middle" fill="#6b7280" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">Co-Founder of Forage</text>
+  </g>
+
+  <!-- Bottom Verification Footer -->
+  <line x1="80" y1="740" x2="1120" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="80" y="765" fill="#9ca3af" font-family="'Plus Jakarta Sans', sans-serif" font-size="12">Enrolment Verification Code WLeRHqv8v9YfHDJbY  |  User Verification Code 69eb6a0c7c2f6961f3a34b1f  |  Issued by Forage</text>
+</svg>

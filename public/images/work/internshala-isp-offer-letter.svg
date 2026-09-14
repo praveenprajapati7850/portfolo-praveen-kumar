@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1300" width="1000" height="1300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap');
+      .sans { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="1300" fill="#ffffff"/>
+
+  <!-- Top Header with Internshala Logo & Company Address -->
+  <g transform="translate(80, 70)">
+    <path d="M 0 16 L 32 0 L 16 32 L 14 18 Z" fill="#008bd3"/>
+    <path d="M 14 18 L 32 0 L 22 22 Z" fill="#00a5f0"/>
+    <text x="42" y="24" fill="#1e293b" font-family="'Plus Jakarta Sans', sans-serif" font-size="24" font-weight="800" letter-spacing="1">INTERNSHALA</text>
+  </g>
+
+  <g transform="translate(640, 70)" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b" text-anchor="start">
+    <text x="0" y="15" font-weight="600">Scholiverse Educare Pvt. Ltd.</text>
+    <text x="0" y="32">901A/B, Iris Tech Park, Sec-48,</text>
+    <text x="0" y="49">Sohna Road, Gurugram,</text>
+    <text x="0" y="66">India - 122018</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="80" y1="155" x2="920" y2="155" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Letter Date -->
+  <text x="80" y="210" fill="#334155" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="600">20/06/2026</text>
+
+  <!-- Salutation -->
+  <text x="80" y="260" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700">Dear Praveen ,</text>
+
+  <!-- Welcome Title -->
+  <text x="80" y="315" fill="#008bd3" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800">Welcome to Internshala Student Partner (ISP) program!</text>
+
+  <!-- Letter Body Paragraphs -->
+  <g font-family="'Plus Jakarta Sans', sans-serif" font-size="15" fill="#334155" font-weight="400">
+    <text x="80" y="370">We hope that you are excited to embark on a transformational journey with us. At Internshala, we</text>
+    <text x="80" y="398">consider the ISP team to be our biggest strength when it comes to educating college students</text>
+    <text x="80" y="426">across the world about the power of internships and online trainings. Thus, we take pride in hiring</text>
+    <text x="80" y="454"><tspan font-weight="700" fill="#0f172a">ONLY the best and the brightest!</tspan> We are sure that you would play a vital role in helping us realize</text>
+    <text x="80" y="482">our vision of creating a world full of opportunities for the students.</text>
+
+    <text x="80" y="540">Your appointment as an ISP will be governed by the terms and conditions presented in <tspan font-weight="700" fill="#0f172a">Annexure A</tspan></text>
+
+    <text x="80" y="600" font-size="17" font-weight="700" fill="#0f172a">Congratulations!</text>
+
+    <text x="80" y="660">Warm regards,</text>
+  </g>
+
+  <!-- Signature Area -->
+  <g transform="translate(80, 680)">
+    <path d="M 10 30 Q 30 10 50 35 T 90 20" stroke="#1e293b" stroke-width="1.8" fill="none"/>
+    <text x="0" y="60" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Himanshi Dwivedi</text>
+    <text x="0" y="82" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500">Senior Manager - Internshala</text>
+    <text x="0" y="110" fill="#008bd3" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600">Internshala ~ 'connecting students with internships from 80,000+ brands'</text>
+  </g>
+
+  <!-- Annexure Highlight Summary Box -->
+  <rect x="80" y="860" width="840" height="280" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="110" y="900" fill="#0f172a" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700">Key Appointment Details (Annexure A)</text>
+  <g font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#334155">
+    <text x="110" y="935">• <tspan font-weight="600">Location:</tspan> Work from home / college</text>
+    <text x="110" y="965">• <tspan font-weight="600">Working hours:</tspan> 2-3 hours per week</text>
+    <text x="110" y="995">• <tspan font-weight="600">Rewards:</tspan> Performance-based incentives + ISP Completion letter</text>
+    <text x="110" y="1025">• <tspan font-weight="600">Roles:</tspan> Campus branding, career enablement, peer internship promotion</text>
+    <text x="110" y="1055">• <tspan font-weight="600">Grand Rewards:</tspan> Access to exclusive goodies, training stipends</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="80" y1="1200" x2="920" y2="1200" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="500" y="1235" text-anchor="middle" fill="#64748b" font-family="'Plus Jakarta Sans', sans-serif" font-size="13">For any queries, please contact <tspan fill="#008bd3" font-weight="600">isp-hiring@internshala.com</tspan></text>
+</svg>

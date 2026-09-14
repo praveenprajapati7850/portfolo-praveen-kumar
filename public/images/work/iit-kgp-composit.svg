@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap');
+    </style>
+  </defs>
+
+  <rect width="1200" height="850" fill="#ffffff"/>
+
+  <!-- Corner Geometric Accents (Top Left & Bottom Right) -->
+  <polygon points="0,0 220,0 0,350" fill="#981b1e"/>
+  <polygon points="0,0 120,0 0,190" fill="#b91c1c"/>
+  <polygon points="1200,850 980,850 1200,500" fill="#981b1e"/>
+  <polygon points="1200,850 1080,850 1200,660" fill="#b91c1c"/>
+
+  <!-- Fine corner border lines -->
+  <g stroke="#981b1e" stroke-width="1.8" fill="none">
+    <path d="M 30 750 L 30 820 L 100 820"/>
+    <path d="M 45 765 L 45 805 L 85 805"/>
+    <path d="M 60 780 L 60 790 L 70 790"/>
+    <path d="M 1170 100 L 1170 30 L 1100 30"/>
+    <path d="M 1155 85 L 1155 45 L 1115 45"/>
+    <path d="M 1140 70 L 1140 60 L 1130 60"/>
+  </g>
+
+  <!-- Left Logo: COMPOSIT Gear -->
+  <g transform="translate(200, 120)">
+    <circle cx="50" cy="50" r="40" fill="none" stroke="#262626" stroke-width="6"/>
+    <circle cx="50" cy="50" r="22" fill="#262626"/>
+    <circle cx="50" cy="50" r="10" fill="#ffffff"/>
+    <text x="50" y="115" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#262626">COMPOSIT</text>
+    <text x="50" y="128" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" letter-spacing="1.5" fill="#737373">IIT KHARAGPUR</text>
+  </g>
+
+  <!-- Right Logo: SME Gear -->
+  <g transform="translate(900, 120)">
+    <circle cx="50" cy="50" r="42" fill="none" stroke="#262626" stroke-width="6" stroke-dasharray="10,4"/>
+    <text x="50" y="58" text-anchor="middle" font-family="'Cinzel', serif" font-size="22" font-weight="800" fill="#262626">SME</text>
+    <text x="50" y="70" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="700" fill="#262626">IIT KGP</text>
+  </g>
+
+  <!-- Center Heading -->
+  <text x="600" y="180" text-anchor="middle" font-family="'Cinzel', serif" font-size="44" font-weight="800" fill="#171717" letter-spacing="4">CERTIFICATE</text>
+  <text x="600" y="225" text-anchor="middle" font-family="'Cinzel', serif" font-size="24" font-weight="700" fill="#981b1e" letter-spacing="6">OF PARTICIPATION</text>
+
+  <!-- Decorative Separator -->
+  <g transform="translate(600, 260)">
+    <line x1="-120" y1="0" x2="120" y2="0" stroke="#737373" stroke-width="1"/>
+    <circle cx="0" cy="0" r="4" fill="#981b1e"/>
+  </g>
+
+  <!-- Certificate Body -->
+  <text x="600" y="340" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="500" fill="#404040">This is to certify that</text>
+
+  <text x="600" y="415" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="38" font-weight="800" fill="#0f172a">Praveen Kumar</text>
+  <line x1="250" y1="435" x2="950" y2="435" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Narrative Description -->
+  <text x="600" y="495" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="17" font-weight="500" fill="#334155" line-height="1.8">
+    <tspan x="600" dy="0">Was a <tspan font-weight="800" fill="#0f172a">Finalist</tspan> in the <tspan font-weight="800" fill="#0f172a">Ideathon</tspan> at the 31st Edition of COMPOSIT, organized by the</tspan>
+    <tspan x="600" dy="32">Society of Metallurgical Engineers, IIT Kharagpur, held from 27th March to 29th March</tspan>
+    <tspan x="600" dy="32">2026, demonstrating innovative thinking and problem-solving skills.</tspan>
+  </text>
+
+  <!-- Signatures -->
+  <!-- Left: Prof. Sankha Mukherjee -->
+  <g transform="translate(360, 670)">
+    <path d="M -50 20 Q -20 -10 20 20 T 60 15" stroke="#0f172a" stroke-width="2" fill="none"/>
+    <line x1="-90" y1="35" x2="90" y2="35" stroke="#94a3b8" stroke-width="1"/>
+    <text x="0" y="58" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#0f172a">Prof. Sankha Mukherjee</text>
+    <text x="0" y="78" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Faculty Advisor,</text>
+    <text x="0" y="94" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Society of Metallurgical Engineers,</text>
+    <text x="0" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">IIT Kharagpur.</text>
+  </g>
+
+  <!-- Right: Prof. Amlan Dutta -->
+  <g transform="translate(840, 670)">
+    <path d="M -40 25 Q -10 -5 25 25 T 50 15" stroke="#0f172a" stroke-width="2" fill="none"/>
+    <line x1="-90" y1="35" x2="90" y2="35" stroke="#94a3b8" stroke-width="1"/>
+    <text x="0" y="58" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#0f172a">Prof. Amlan Dutta</text>
+    <text x="0" y="78" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Faculty Advisor,</text>
+    <text x="0" y="94" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">Society of Metallurgical Engineers,</text>
+    <text x="0" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">IIT Kharagpur.</text>
+  </g>
+</svg>

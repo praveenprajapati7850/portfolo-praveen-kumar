@@ -1,0 +1,116 @@
+import os
+
+svg_techfest = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1130" width="800" height="1130">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap');
+      .font-sans { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+      .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    </style>
+    <linearGradient id="tfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07192f"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00a8cc"/>
+      <stop offset="100%" stop-color="#fe4300"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1130" fill="#ffffff"/>
+
+  <!-- Top Navy Banner -->
+  <path d="M 0 0 L 800 0 L 800 85 L 520 85 L 430 0 Z" fill="url(#tfGrad)"/>
+  <polygon points="420,0 510,85 525,85 435,0" fill="#00a8cc" opacity="0.8"/>
+  <path d="M 440 0 L 800 0 L 800 95 L 490 95 Z" fill="#0c2540"/>
+
+  <!-- Techfest Logo Text -->
+  <text x="50" y="52" fill="#ffffff" font-size="28" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="-0.5">TF Techfest<tspan font-size="14" dy="-10">™</tspan></text>
+  <text x="50" y="72" fill="#00d2ff" font-size="11" font-weight="500" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="0.3">Asia's Largest Science &amp; Technology Festival</text>
+
+  <!-- Right Header: Techfest, IIT Bombay -->
+  <text x="750" y="58" text-anchor="end" fill="#ffffff" font-size="24" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Techfest, IIT Bombay</text>
+
+  <!-- Title: OFFER LETTER -->
+  <text x="400" y="215" text-anchor="middle" fill="#0a192f" font-size="24" font-weight="800" font-family="'Plus Jakarta Sans', sans-serif" letter-spacing="2">OFFER LETTER</text>
+  <line x1="340" y1="230" x2="460" y2="230" stroke="#0a192f" stroke-width="1.5"/>
+
+  <!-- Salutation -->
+  <text x="60" y="285" fill="#1e293b" font-size="16" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Dear Praveen kumar,</text>
+
+  <!-- Body Paragraph 1 -->
+  <text x="60" y="325" fill="#334155" font-size="13.5" font-weight="400" font-family="'Plus Jakarta Sans', sans-serif" line-height="1.6">
+    <tspan x="60" dy="0">We are thrilled to welcome you onboard as a <tspan font-weight="700" fill="#0f172a">College Ambassador for Techfest, IIT Bombay –</tspan></tspan>
+    <tspan x="60" dy="24">Asia's Largest Science and Technology Festival. Your passion, energy, and leadership potential</tspan>
+    <tspan x="60" dy="24">make you a perfect fit for this prestigious role. As the face of Techfest in your college, you'll have</tspan>
+    <tspan x="60" dy="24">the unique opportunity to drive engagement, spark innovation, and lead your peers into the vibrant</tspan>
+    <tspan x="60" dy="24">world of tech and creativity.</tspan>
+  </text>
+
+  <!-- Body Paragraph 2 -->
+  <text x="60" y="475" fill="#334155" font-size="13.5" font-weight="400" font-family="'Plus Jakarta Sans', sans-serif">
+    <tspan x="60" dy="0">As a College Ambassador, you'll gain access to certified courses and internship opportunities.</tspan>
+    <tspan x="60" dy="32" font-weight="600" fill="#0f172a">Details of the Internship are encapsulated below:</tspan>
+  </text>
+
+  <!-- Table Container -->
+  <rect x="60" y="540" width="680" height="135" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="4"/>
+  <line x1="60" y1="574" x2="740" y2="574" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="60" y1="608" x2="740" y2="608" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="60" y1="642" x2="740" y2="642" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="380" y1="540" x2="380" y2="675" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Table Content -->
+  <text x="80" y="562" fill="#475569" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">Project Title</text>
+  <text x="400" y="562" fill="#0f172a" font-size="13" font-weight="600" font-family="'Plus Jakarta Sans', sans-serif">College Ambassador</text>
+
+  <text x="80" y="596" fill="#475569" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">Internship Start Date</text>
+  <text x="400" y="596" fill="#0f172a" font-size="13" font-weight="600" font-family="'Plus Jakarta Sans', sans-serif">1st July 2026</text>
+
+  <text x="80" y="630" fill="#475569" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">Internship End Date</text>
+  <text x="400" y="630" fill="#0f172a" font-size="13" font-weight="600" font-family="'Plus Jakarta Sans', sans-serif">Till Techfest 2026-27</text>
+
+  <text x="80" y="664" fill="#475569" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">Benefits</text>
+  <text x="400" y="664" fill="#0f172a" font-size="13" font-weight="600" font-family="'Plus Jakarta Sans', sans-serif">Performance-based</text>
+
+  <!-- Body Paragraph 3 -->
+  <text x="60" y="720" fill="#334155" font-size="13.5" font-weight="400" font-family="'Plus Jakarta Sans', sans-serif">
+    <tspan x="60" dy="0">We're confident you'll play a key role in Techfest 2026-27's success. This is more than a role; it's</tspan>
+    <tspan x="60" dy="24">your chance to grow, lead, and leave a mark. Wishing you a journey full of learning, impact, and</tspan>
+    <tspan x="60" dy="24">unforgettable experiences. Welcome aboard!</tspan>
+    <tspan x="60" dy="38" font-weight="600" fill="#0f172a">Regards,</tspan>
+    <tspan x="60" dy="22" font-weight="600" fill="#0f172a">Techfest Team</tspan>
+  </text>
+
+  <!-- Signatures -->
+  <!-- Left Signature: Ansh Yadav -->
+  <path d="M 180 910 Q 200 880 230 905 T 270 890" stroke="#0f172a" stroke-width="2" fill="none"/>
+  <path d="M 210 885 L 250 920" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+  <text x="240" y="940" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Ansh Yadav</text>
+  <text x="240" y="958" text-anchor="middle" fill="#64748b" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">Overall Coordinator</text>
+  <text x="240" y="974" text-anchor="middle" fill="#64748b" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">Techfest, IIT Bombay</text>
+
+  <!-- Right Signature: Mayank Mudgal -->
+  <path d="M 540 905 Q 570 875 600 905 T 640 895" stroke="#0f172a" stroke-width="2" fill="none"/>
+  <path d="M 580 880 L 610 920" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+  <text x="600" y="940" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">Mayank Mudgal</text>
+  <text x="600" y="958" text-anchor="middle" fill="#64748b" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">Overall Coordinator</text>
+  <text x="600" y="974" text-anchor="middle" fill="#64748b" font-size="12" font-family="'Plus Jakarta Sans', sans-serif">Techfest, IIT Bombay</text>
+
+  <!-- Footer Banner -->
+  <rect x="0" y="1060" width="800" height="70" fill="#07192f"/>
+  <polygon points="480,1060 550,1130 570,1130 500,1060" fill="#00a8cc" opacity="0.7"/>
+  <text x="40" y="1092" fill="#ffffff" font-size="14" font-weight="600" font-family="'Plus Jakarta Sans', sans-serif">Techfest Office, Students' Activity Centre,</text>
+  <text x="40" y="1112" fill="#94a3b8" font-size="13" font-family="'Plus Jakarta Sans', sans-serif">IIT Bombay, Mumbai - 400076</text>
+
+  <circle cx="590" cy="1100" r="10" fill="none" stroke="#00d2ff" stroke-width="1.5"/>
+  <line x1="580" y1="1100" x2="600" y2="1100" stroke="#00d2ff" stroke-width="1.5"/>
+  <text x="610" y="1105" fill="#ffffff" font-size="15" font-weight="700" font-family="'Plus Jakarta Sans', sans-serif">www.techfest.org</text>
+</svg>
+"""
+
+with open('public/images/work/techfest-iit-bombay-offer-letter.svg', 'w') as f:
+    f.write(svg_techfest)
+
+print("Techfest SVG created successfully")
