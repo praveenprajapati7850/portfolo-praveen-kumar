@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { ProjectItem } from '../types';
-import { X, ExternalLink, Award, CheckCircle, Calendar, FileText, UserCheck, KeyRound, Upload, ArrowUpRight } from 'lucide-react';
-import { compressImageFile } from '../utils/imageOptimizer';
+import { X, ExternalLink, Award, CheckCircle, Calendar, FileText, UserCheck, KeyRound, ArrowUpRight } from 'lucide-react';
 
 interface ProjectModalProps {
   project: ProjectItem | null;
@@ -12,38 +11,8 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({
   project,
   onClose,
-  onUpdateProject,
 }) => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
   if (!project) return null;
-
-  const handleUploadOriginal = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    try {
-      const compressedUrl = await compressImageFile(file, 1200, 1000, 0.85);
-      if (compressedUrl && onUpdateProject) {
-        onUpdateProject({
-          ...project,
-          image: compressedUrl,
-        });
-      }
-    } catch {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const dataUrl = event.target?.result as string;
-        if (dataUrl && onUpdateProject) {
-          onUpdateProject({
-            ...project,
-            image: dataUrl,
-          });
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
 
   return (
     <div
@@ -54,16 +23,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
         className="bg-white border border-neutral-200 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl relative my-auto max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Hidden File Input for Original File Replacement */}
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleUploadOriginal}
-          accept="image/*"
-          className="hidden"
-          aria-hidden="true"
-        />
-
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 bg-white sticky top-0 z-20">
           <div className="flex items-center gap-2.5">
@@ -83,18 +42,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => fileInputRef.current?.click()}
-              title="Replace preview with your original file"
-              className="px-2.5 py-1.5 rounded-lg text-xs font-semibold text-neutral-700 hover:text-[#fe4300] bg-neutral-100 hover:bg-neutral-200 transition-colors flex items-center gap-1.5"
-            >
-              <Upload size={13} />
-              <span className="hidden sm:inline">Use Original File</span>
-            </button>
-            <button
-              type="button"
               onClick={onClose}
               aria-label="Close modal"
-              className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 flex items-center justify-center transition-colors shrink-0"
+              className="w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-700 flex items-center justify-center transition-colors shrink-0 cursor-pointer"
             >
               <X size={18} />
             </button>
@@ -113,14 +63,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({
               }}
               className="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-sm bg-white"
             />
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              className="absolute bottom-4 right-4 px-3 py-1.5 rounded-md bg-black/75 hover:bg-black text-white text-xs font-medium transition-all opacity-90 hover:opacity-100 flex items-center gap-1.5 shadow-md"
-            >
-              <Upload size={13} />
-              <span>Replace with Original Picture</span>
-            </button>
           </div>
 
           {/* Full Detailed Explanation Box */}

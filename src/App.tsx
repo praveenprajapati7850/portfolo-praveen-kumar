@@ -5,10 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import {
-  defaultPortfolioData,
   getStoredPortfolioData,
-  saveStoredPortfolioData,
-  resetStoredPortfolioData,
 } from './data/portfolioData';
 import { PortfolioData, ProjectItem } from './types';
 import { Navbar } from './components/Navbar';
@@ -23,16 +20,14 @@ import { WorksSection } from './components/WorksSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
-import { EditDrawerModal } from './components/EditDrawerModal';
 import { AskPraveenAIModal } from './components/AskPraveenAIModal';
 import { ResumeModal } from './components/ResumeModal';
 import { ResumeDocument } from './components/ResumeDocument';
 
 export default function App() {
-  const [portfolioData, setPortfolioData] = useState<PortfolioData>(() =>
+  const [portfolioData] = useState<PortfolioData>(() =>
     getStoredPortfolioData()
   );
-  const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
   const [isResumeModalOpen, setIsResumeModalOpen] = useState<boolean>(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
@@ -43,51 +38,20 @@ export default function App() {
     document.body.style.backgroundColor = '#ffffff';
     try {
       localStorage.removeItem('theme_dark');
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith('portfolio_data_') || key.startsWith('praveen_portfolio_')) {
+          localStorage.removeItem(key);
+        }
+      });
     } catch (e) {
       // ignore
     }
   }, []);
 
-  const handleSaveData = (newData: PortfolioData) => {
-    setPortfolioData(newData);
-    saveStoredPortfolioData(newData);
-  };
-
-  const handleResetData = () => {
-    const reset = resetStoredPortfolioData();
-    setPortfolioData(reset);
-  };
-
-  const handleUpdateProject = (updatedProject: ProjectItem) => {
-    const updatedProjects = portfolioData.projects.map((p) =>
-      p.id === updatedProject.id ? updatedProject : p
-    );
-    const updatedData = {
-      ...portfolioData,
-      projects: updatedProjects,
-    };
-    handleSaveData(updatedData);
-    if (selectedProject && selectedProject.id === updatedProject.id) {
-      setSelectedProject(updatedProject);
-    }
-  };
-
-  const handleUpdateAvatar = (avatarUrl: string) => {
-    const updatedData = {
-      ...portfolioData,
-      personal: {
-        ...portfolioData.personal,
-        avatarUrl,
-      },
-    };
-    handleSaveData(updatedData);
-  };
-
   return (
     <div className="min-h-screen bg-white text-neutral-950">
       {/* Top Navigation */}
       <Navbar
-        onOpenEditModal={() => setIsEditModalOpen(true)}
         onOpenResumeModal={() => setIsResumeModalOpen(true)}
         userName={portfolioData.personal.name}
       />
@@ -97,7 +61,6 @@ export default function App() {
         {/* Hero Section */}
         <HeroSection
           personal={portfolioData.personal}
-          onUpdateAvatar={handleUpdateAvatar}
         />
 
         {/* Contact Links Bar */}
@@ -132,7 +95,6 @@ export default function App() {
         <WorksSection
           projects={portfolioData.projects}
           onSelectProject={(project) => setSelectedProject(project)}
-          onUpdateProject={handleUpdateProject}
         />
 
         {/* Section 07: Contact Me */}
@@ -146,7 +108,6 @@ export default function App() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
-        onUpdateProject={handleUpdateProject}
       />
 
       {/* Interactive Ask Praveen AI Floating Assistant */}
@@ -157,15 +118,6 @@ export default function App() {
         isOpen={isResumeModalOpen}
         onClose={() => setIsResumeModalOpen(false)}
         personal={portfolioData.personal}
-      />
-
-      {/* Customizer / Personalization Modal */}
-      <EditDrawerModal
-        isOpen={isEditModalOpen}
-        data={portfolioData}
-        onSave={handleSaveData}
-        onReset={handleResetData}
-        onClose={() => setIsEditModalOpen(false)}
       />
 
       {/* Offscreen exact-size (794px = 210mm A4) Resume DOM for instant high-resolution PDF generation */}

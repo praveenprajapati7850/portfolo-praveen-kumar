@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { Download, Edit3, Eye, Trophy, Loader2, Menu, X, Award, Briefcase, Sparkles, PhoneCall } from 'lucide-react';
+import { Download, Eye, Trophy, Loader2, Menu, X, Award, Briefcase, Sparkles, PhoneCall } from 'lucide-react';
 import { downloadResumePdfFromElement } from '../utils/pdfGenerator';
 
 interface NavbarProps {
-  onOpenEditModal: () => void;
   onOpenResumeModal?: () => void;
   userName?: string;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenEditModal,
   onOpenResumeModal,
   userName = 'Praveen Kumar',
 }) => {
@@ -102,19 +100,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
             </div>
 
-            {/* Right: Actions (Customize, Preview, Download PDF, Mobile Menu Toggle) */}
+            {/* Right: Actions (Preview, Download PDF, Mobile Menu Toggle) */}
             <div className="flex items-center gap-2 sm:gap-3">
-              {/* Customize / Edit Data Button */}
-              <button
-                type="button"
-                onClick={onOpenEditModal}
-                className="px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-full border border-neutral-300 bg-white text-xs sm:text-sm font-medium hover:border-[#fe4300] hover:text-[#fe4300] transition-colors flex items-center gap-1.5 text-neutral-800 shadow-xs"
-                title="Edit portfolio information"
-              >
-                <Edit3 size={14} />
-                <span className="hidden sm:inline">Customize</span>
-              </button>
-
               {/* View Resume in Modal Button */}
               {onOpenResumeModal && (
                 <button

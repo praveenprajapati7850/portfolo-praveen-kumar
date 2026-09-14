@@ -9,7 +9,7 @@ export const defaultPortfolioData: PortfolioData = {
     phone: '+91 7850909557',
     website: 'https://www.linkedin.com/in/praveen-kumar-907443384',
     location: 'Rajasthan & Pondicherry, India',
-    avatarUrl: '/images/praveen-profile.jpg',
+    avatarUrl: '/images/praveen-portrait.jpg?v=20260914',
     yearsExperience: 'Top 100',
     happyClients: '4+',
     projectsCompleted: '7 Verified Credentials',
@@ -151,7 +151,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'College Ambassador Offer Letter',
       client: 'Techfest, IIT Bombay',
       category: 'Offer Letters',
-      image: '/images/work/techfest-iit-bombay-offer-letter.svg',
+      image: '/images/work/techfest-offer-letter.jpg',
       link: 'https://www.techfest.org',
       documentType: 'Official Offer Letter',
       issueDate: '1st July 2026 – Till Techfest 2026-27',
@@ -172,7 +172,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'ISRO National Space Day Quiz – Top 100 Winner & ISRO Visit',
       client: 'ISRO (Indian Space Research Organisation)',
       category: 'National Honors',
-      image: '/images/work/isro-visit-group.jpg',
+      image: '/images/work/isro-visit-delegation.png',
       link: 'https://www.isro.gov.in',
       documentType: 'National Award & Delegation Visit',
       issueDate: 'November 2025',
@@ -193,7 +193,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'Tata Crucible Campus Ambassador Certificate of Appreciation',
       client: 'Tata Crucible & Internshala',
       category: 'Ambassadorships',
-      image: '/images/work/tata-crucible-campus-ambassador.svg',
+      image: '/images/work/tata-crucible-ambassador.jpg',
       link: 'https://www.tatacrucible.com',
       documentType: 'Certificate of Appreciation',
       issueDate: 'Apr 2026 – May 2026',
@@ -214,7 +214,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'Data Visualization Certification',
       client: 'Vodafone Idea Foundation & VOIS',
       category: 'Data & Analytics',
-      image: '/images/work/vi-edunet-data-visualization.svg',
+      image: '/images/Certificate_page-0001.jpg?v=20260914',
       link: '#contact',
       documentType: 'Certificate of Completion',
       issueDate: 'August 14, 2026',
@@ -234,7 +234,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'Ideathon Finalist – COMPOSIT 31st Edition',
       client: 'IIT Kharagpur (SME)',
       category: 'Competitions',
-      image: '/images/work/iit-kgp-composit.svg',
+      image: '/images/work/iit-kgp-ideathon.png',
       link: 'https://iitkgp.ac.in',
       documentType: 'Certificate of Participation (Finalist)',
       issueDate: '27th – 29th March 2026',
@@ -255,7 +255,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: '2026 Aspire Leaders Program Certificate',
       client: 'Aspire Institute (Founded by Harvard Faculty)',
       category: 'Global Leadership',
-      image: '/images/work/aspire-leaders-program.svg',
+      image: '/images/work/aspire-leaders-certificate.jpg',
       link: 'https://www.aspireleaders.org',
       documentType: 'Certificate of Completion',
       issueDate: 'April 2026',
@@ -276,7 +276,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'Internshala Student Partner (ISP) Appointment Letter',
       client: 'Internshala (Scholiverse Educare Pvt. Ltd.)',
       category: 'Offer Letters',
-      image: '/images/work/internshala-isp-offer-letter.svg',
+      image: '/images/work/internshala-isp-letter.jpg',
       link: 'https://internshala.com',
       documentType: 'Official Appointment Letter',
       issueDate: '20/06/2026',
@@ -296,7 +296,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'Mastercard Cybersecurity Job Simulation',
       client: 'Mastercard (via Forage)',
       category: 'Fintech & Banking',
-      image: '/images/work/mastercard-cybersecurity.svg',
+      image: '/images/work/mastercard-cybersecurity.jpg',
       link: 'https://www.theforage.com',
       documentType: 'Certificate of Completion',
       issueDate: 'May 30th, 2026',
@@ -317,7 +317,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'PNC Bank Financial Services & Banking Simulation',
       client: 'PNC Bank (via Forage)',
       category: 'Fintech & Banking',
-      image: '/images/work/pnc-bank-financial-services.svg',
+      image: '/images/work/pnc-bank-financial-services.jpg',
       link: 'https://www.theforage.com',
       documentType: 'Certificate of Completion',
       issueDate: 'April 24th, 2026',
@@ -338,7 +338,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'SEBI Investor Awareness Test Certification',
       client: 'SEBI & NISM',
       category: 'Fintech & Banking',
-      image: '/images/work/sebi-nism-investor-awareness.svg',
+      image: '/images/work/sebi-nism-certificate.png',
       link: 'https://www.sebi.gov.in',
       documentType: 'Certificate of Participation & Completion',
       issueDate: 'March 02, 2026',
@@ -358,7 +358,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'PW Campus Ambassador Leadership Certificate',
       client: 'Physics Wallah (PW Ambassador)',
       category: 'Ambassadorships',
-      image: '/images/work/physicswallah-campus-ambassador.svg',
+      image: '/images/work/physicswallah-ambassador.png',
       link: 'https://www.pw.live',
       documentType: 'Campus Ambassador Certificate',
       issueDate: '10 November 2025',
@@ -378,7 +378,7 @@ export const defaultPortfolioData: PortfolioData = {
       title: 'AICTE Virtual Internship in Data Analytics',
       client: 'AICTE & EduSkills Foundation',
       category: 'Data & Analytics',
-      image: '/images/work/data-analytics-aicte.jpg',
+      image: '/images/work/aicte-edunet-internship.jpeg',
       link: 'https://internship.aicte-india.org',
       documentType: 'Virtual Internship Certificate',
       issueDate: '2025 / 2026',
@@ -404,7 +404,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'National Top 100 Rank',
       credentialId: 'ISRO-NSD-Top100',
       relatedProjectId: 'proj-isro-visit',
-      image: '/images/work/isro-national-quiz.jpg',
+      image: '/images/work/isro-quiz-certificate.jpg',
       description:
         'Ranked in the top 100 nationwide winners across India in the ISRO National Space Day Quiz (November 2025). Selected for an official delegation tour of the ISRO Launch Complex and research facilities, witnessing rocket launch assemblies including PSLV and GSLV configurations.',
       highlights: [
@@ -421,8 +421,8 @@ export const defaultPortfolioData: PortfolioData = {
       category: 'Competitions',
       badge: 'National Finalist',
       credentialId: 'COMPOSIT-31st-Finalist',
-      relatedProjectId: 'proj-iit-kgp',
-      image: '/images/work/iit-kgp-composit.svg',
+      relatedProjectId: 'proj-iitkgp-composit',
+      image: '/images/work/iit-kgp-ideathon.png',
       description:
         'Selected as a Finalist in the flagship Ideathon at the 31st Edition of COMPOSIT, presenting innovative technology-driven solutions before IIT Kharagpur faculty and industry jury.',
       highlights: [
@@ -440,7 +440,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Asia\'s Largest Tech Fest',
       credentialId: 'IITB-Techfest-Ambassador',
       relatedProjectId: 'proj-techfest-iitb',
-      image: '/images/work/techfest-iit-bombay-offer-letter.svg',
+      image: '/images/work/techfest-offer-letter.jpg',
       description:
         'Officially appointed as College Ambassador representing Pondicherry University for Techfest, IIT Bombay — Asia\'s Largest Science & Technology Festival. Spearheading student engagement, tech competitions, and regional outreach.',
       highlights: [
@@ -458,7 +458,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Harvard Faculty Founded',
       credentialId: 'Aspire-Leadership-2026',
       relatedProjectId: 'proj-aspire-leaders',
-      image: '/images/work/aspire-leaders-program.svg',
+      image: '/images/work/aspire-leaders-certificate.jpg',
       description:
         'Selected for the prestigious, fully funded Aspire Leaders Program, collaborating with international peers and Harvard faculty in leadership, critical ethics, and social impact.',
       highlights: [
@@ -476,7 +476,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Tata Crucible Ambassador',
       credentialId: 'Tata-Crucible-CA',
       relatedProjectId: 'proj-tata-crucible',
-      image: '/images/work/tata-crucible-campus-ambassador.svg',
+      image: '/images/work/tata-crucible-ambassador.jpg',
       description:
         'Selected as official Campus Ambassador for India’s premier corporate and campus business quiz, spearheading youth outreach, quiz registrations, and university branding.',
       highlights: [
@@ -510,7 +510,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Official Campus Lead',
       credentialId: 'ISP-Appointment-Letter',
       relatedProjectId: 'proj-internshala-isp',
-      image: '/images/work/internshala-isp-offer-letter.svg',
+      image: '/images/work/internshala-isp-letter.jpg',
       description:
         'Appointed as Internshala Student Partner (ISP), facilitating internship opportunities, skill training bootcamps, and career resources for university peers.',
       highlights: [
@@ -528,7 +528,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Credential ID: VFLMS26_163709',
       credentialId: 'VFLMS26_163709',
       relatedProjectId: 'proj-vois-data-viz',
-      image: '/images/work/vi-edunet-data-visualization.svg',
+      image: '/images/Certificate_page-0001.jpg?v=20260914',
       description:
         'Completed practical industry program in Data Visualization & Analytics using modern visual analytics tools, data storytelling, and business metrics.',
       highlights: [
@@ -546,7 +546,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Govt. of India / AICTE',
       credentialId: 'AICTE-EduSkills-DA',
       relatedProjectId: 'proj-aicte-data',
-      image: '/images/work/data-analytics-aicte.jpg',
+      image: '/images/work/aicte-edunet-internship.jpeg',
       description:
         'Successfully finished intensive virtual internship in Data Analytics sponsored by AICTE, mastering Python data pipelines, SQL queries, and visualization workflows.',
       highlights: [
@@ -564,7 +564,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Cert: NISM20260000378433-001',
       credentialId: 'NISM20260000378433-001',
       relatedProjectId: 'proj-sebi-nism',
-      image: '/images/work/sebi-nism-investor-awareness.svg',
+      image: '/images/work/sebi-nism-certificate.png',
       description:
         'Achieved certified recognition in Investor Awareness, covering Indian financial markets, regulatory frameworks, investor rights, and capital market dynamics.',
       highlights: [
@@ -582,7 +582,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Forage Verified',
       credentialId: 'Mastercard-Cyber-Sim',
       relatedProjectId: 'proj-mastercard-cyber',
-      image: '/images/work/mastercard-cybersecurity.svg',
+      image: '/images/work/mastercard-cybersecurity.jpg',
       description:
         'Simulated hands-on cybersecurity defense scenarios including security assessment, phishing incident response, and institutional information security protocols.',
       highlights: [
@@ -600,7 +600,7 @@ export const defaultPortfolioData: PortfolioData = {
       badge: 'Forage Verified',
       credentialId: 'PNC-Bank-Fin-Sim',
       relatedProjectId: 'proj-pnc-bank',
-      image: '/images/work/pnc-bank-financial-services.svg',
+      image: '/images/work/pnc-bank-financial-services.jpg',
       description:
         'Completed practical financial analysis and commercial banking simulation evaluating consumer creditworthiness, loan portfolios, and risk mitigation.',
       highlights: [
@@ -626,8 +626,10 @@ export const defaultPortfolioData: PortfolioData = {
   ],
 };
 
-const STORAGE_KEY = 'portfolio_data_praveen_v10';
+const STORAGE_KEY = 'portfolio_data_praveen_v12';
 const LEGACY_STORAGE_KEYS = [
+  'portfolio_data_praveen_v11',
+  'portfolio_data_praveen_v10',
   'portfolio_data_praveen_v9',
   'portfolio_data_praveen_v8',
   'portfolio_data_praveen_v7',
@@ -641,204 +643,19 @@ const LEGACY_STORAGE_KEYS = [
 ];
 
 export function getStoredPortfolioData(): PortfolioData {
-  if (typeof window === 'undefined') return defaultPortfolioData;
-
-  try {
-    // 1. Check primary storage key
-    let savedRaw = localStorage.getItem(STORAGE_KEY);
-
-    // 2. If not found in primary, search legacy keys
-    if (!savedRaw) {
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
       for (const legacyKey of LEGACY_STORAGE_KEYS) {
-        const found = localStorage.getItem(legacyKey);
-        if (found) {
-          savedRaw = found;
-          break;
-        }
+        localStorage.removeItem(legacyKey);
       }
-    }
-
-    if (savedRaw) {
-      const parsed = JSON.parse(savedRaw) as PortfolioData;
-
-      // Map any uploaded images or customized projects by ID
-      const customProjectMap = new Map<string, ProjectItem>();
-      if (Array.isArray(parsed.projects)) {
-        parsed.projects.forEach((proj) => {
-          if (proj && proj.id) {
-            customProjectMap.set(proj.id, proj);
-          }
-        });
-      }
-
-      // Merge defaults with custom images / edits while preserving all updated text
-      const mergedProjects: ProjectItem[] = defaultPortfolioData.projects.map((defProj) => {
-        const custom = customProjectMap.get(defProj.id);
-        if (custom) {
-          // If the user uploaded a custom picture (data URL or custom path), ALWAYS preserve it!
-          const hasCustomImage =
-            custom.image &&
-            (custom.image.startsWith('data:') ||
-              custom.image.startsWith('blob:') ||
-              custom.image !== defProj.image);
-
-          return {
-            ...defProj,
-            image: hasCustomImage ? custom.image : defProj.image,
-            // Preserve user-customized fields if explicitly modified
-            title: custom.title || defProj.title,
-            client: custom.client || defProj.client,
-            description: custom.description || defProj.description,
-            documentType: custom.documentType || defProj.documentType,
-            issueDate:
-              defProj.id === 'proj-isro-visit' || (custom.issueDate && custom.issueDate.includes('2024'))
-                ? defProj.issueDate
-                : custom.issueDate || defProj.issueDate,
-            credentialId: custom.credentialId || defProj.credentialId,
-          };
-        }
-        return defProj;
-      });
-
-      // Preserve any completely new custom projects user may have created (excluding removed items)
-      if (Array.isArray(parsed.projects)) {
-        const defaultIds = new Set(defaultPortfolioData.projects.map((p) => p.id));
-        const excludedIds = new Set(['proj-vidyadhan', 'proj-indiastat']);
-        parsed.projects.forEach((proj) => {
-          if (
-            proj &&
-            proj.id &&
-            !defaultIds.has(proj.id) &&
-            !excludedIds.has(proj.id) &&
-            !proj.title.toLowerCase().includes('vidyadhan') &&
-            !proj.title.toLowerCase().includes('indiastat')
-          ) {
-            mergedProjects.push(proj);
-          }
-        });
-      }
-
-      const mergedData: PortfolioData = {
-        ...defaultPortfolioData,
-        personal: {
-          ...defaultPortfolioData.personal,
-          ...(parsed.personal || {}),
-          // Ensure phone is always updated to new 7850909557 if old was stored
-          phone:
-            parsed.personal?.phone && !parsed.personal.phone.includes('78500')
-              ? parsed.personal.phone
-              : defaultPortfolioData.personal.phone,
-          // Ensure socials always point to Praveen's official verified accounts
-          socials: {
-            ...defaultPortfolioData.personal.socials,
-            ...(parsed.personal?.socials || {}),
-            github:
-              parsed.personal?.socials?.github &&
-              parsed.personal.socials.github.trim() !== '' &&
-              parsed.personal.socials.github !== 'https://github.com' &&
-              parsed.personal.socials.github !== 'https://github.com/'
-                ? parsed.personal.socials.github
-                : defaultPortfolioData.personal.socials.github,
-            linkedin:
-              parsed.personal?.socials?.linkedin &&
-              parsed.personal.socials.linkedin.includes('praveen-kumar')
-                ? parsed.personal.socials.linkedin
-                : defaultPortfolioData.personal.socials.linkedin,
-          },
-          // Keep custom avatar if user replaced it
-          avatarUrl:
-            parsed.personal?.avatarUrl &&
-            (parsed.personal.avatarUrl.startsWith('data:') ||
-              parsed.personal.avatarUrl !== defaultPortfolioData.personal.avatarUrl)
-              ? parsed.personal.avatarUrl
-              : defaultPortfolioData.personal.avatarUrl,
-        },
-        projects: mergedProjects,
-        // Preserve any custom experience or education (filtering out removed items)
-        experiences: parsed.experiences && parsed.experiences.length > 0 ? parsed.experiences : defaultPortfolioData.experiences,
-        education:
-          parsed.education && parsed.education.length > 0
-            ? parsed.education.filter(
-                (edu) =>
-                  edu.id !== 'edu-3' &&
-                  !edu.degree.toLowerCase().includes('vidyadhan') &&
-                  !edu.institution.toLowerCase().includes('vidyadhan')
-              )
-            : defaultPortfolioData.education,
-        skills: defaultPortfolioData.skills.map((defSkill) => {
-          return {
-            ...defSkill,
-            rating: defSkill.rating,
-          };
-        }),
-        achievements: defaultPortfolioData.achievements,
-      };
-
-      // Clean up legacy keys from localStorage to free browser quota
-      for (const legacyKey of LEGACY_STORAGE_KEYS) {
-        try {
-          localStorage.removeItem(legacyKey);
-        } catch {}
-      }
-
-      return mergedData;
-    }
-  } catch (e) {
-    console.warn('Could not read stored portfolio data, using defaults', e);
+    } catch {}
   }
-
   return defaultPortfolioData;
 }
 
 export function saveStoredPortfolioData(data: PortfolioData): void {
-  if (typeof window === 'undefined') return;
-
-  // 1. Proactively purge old keys to keep localStorage clean
-  for (const legacyKey of LEGACY_STORAGE_KEYS) {
-    try {
-      localStorage.removeItem(legacyKey);
-    } catch {}
-  }
-
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  } catch (e) {
-    console.warn('Storage quota exceeded; attempting to free space and optimize payload', e);
-    try {
-      // Clear all legacy keys again
-      for (const legacyKey of LEGACY_STORAGE_KEYS) {
-        try {
-          localStorage.removeItem(legacyKey);
-        } catch {}
-      }
-
-      // If still exceeding quota (usually due to oversized base64 images), strip excessively large data URLs
-      const sanitizedData: PortfolioData = {
-        ...data,
-        personal: {
-          ...data.personal,
-          avatarUrl:
-            data.personal.avatarUrl?.startsWith('data:') && data.personal.avatarUrl.length > 250000
-              ? defaultPortfolioData.personal.avatarUrl
-              : data.personal.avatarUrl,
-        },
-        projects: data.projects.map((p) => ({
-          ...p,
-          image:
-            p.image?.startsWith('data:') && p.image.length > 250000
-              ? (defaultPortfolioData.projects.find((d) => d.id === p.id)?.image || p.image)
-              : p.image,
-        })),
-      };
-
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(sanitizedData));
-    } catch (secondErr) {
-      console.warn(
-        'Browser local storage quota reached. Changes remain active for this session.',
-        secondErr
-      );
-    }
-  }
+  // No-op to keep defaultPortfolioData as the single source of truth
 }
 
 export function resetStoredPortfolioData(): PortfolioData {

@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { ProjectItem } from '../types';
-import { CheckCircle, Award, Calendar, FileText, ArrowUpRight, Search, Upload, Image as ImageIcon } from 'lucide-react';
+import { CheckCircle, Award, Calendar, FileText, ArrowUpRight, Search, Image as ImageIcon } from 'lucide-react';
 
 interface WorksSectionProps {
   projects: ProjectItem[];
@@ -11,11 +11,8 @@ interface WorksSectionProps {
 export const WorksSection: React.FC<WorksSectionProps> = ({
   projects,
   onSelectProject,
-  onUpdateProject,
 }) => {
   const [filter, setFilter] = useState<string>('All');
-  const [activeUploadId, setActiveUploadId] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Extract unique categories
   const categories = ['All', ...Array.from(new Set(projects.map((p) => p.category).filter(Boolean))) as string[]];
@@ -24,50 +21,11 @@ export const WorksSection: React.FC<WorksSectionProps> = ({
     ? projects
     : projects.filter((p) => p.category === filter);
 
-  const handleTriggerUpload = (e: React.MouseEvent, projectId: string) => {
-    e.stopPropagation();
-    setActiveUploadId(projectId);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-      fileInputRef.current.click();
-    }
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !activeUploadId) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result as string;
-      if (dataUrl) {
-        const targetProject = projects.find((p) => p.id === activeUploadId);
-        if (targetProject && onUpdateProject) {
-          onUpdateProject({
-            ...targetProject,
-            image: dataUrl,
-          });
-        }
-      }
-    };
-    reader.readAsDataURL(file);
-    setActiveUploadId(null);
-  };
-
   return (
     <section id="works" className="bg-white py-12 sm:py-16 md:py-20 border-t border-neutral-200 scroll-mt-24">
       {/* Target anchor for direct #certificates navigation */}
       <div id="certificates" className="scroll-mt-24" />
       <div className="container mx-auto px-4 max-w-7xl">
-        {/* Hidden File Input for Direct Original File Upload */}
-        <input
-          type="file"
-          ref={fileInputRef}
-          onChange={handleFileChange}
-          accept="image/*"
-          className="hidden"
-          aria-hidden="true"
-        />
 
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-black pb-5 mb-8 sm:mb-10">
@@ -142,16 +100,6 @@ export const WorksSection: React.FC<WorksSectionProps> = ({
                       Click to View Full Details
                     </span>
                   </div>
-
-                  {/* Quick Upload Original File Button */}
-                  <button
-                    type="button"
-                    title="Upload or replace with your original picture"
-                    onClick={(e) => handleTriggerUpload(e, project.id)}
-                    className="absolute top-2 right-2 p-1.5 rounded-md bg-white/90 hover:bg-white text-neutral-700 hover:text-[#fe4300] shadow-xs border border-neutral-200/80 transition-colors z-10"
-                  >
-                    <Upload size={13} />
-                  </button>
                 </div>
               </div>
 

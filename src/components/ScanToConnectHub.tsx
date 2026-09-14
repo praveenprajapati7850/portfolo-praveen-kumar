@@ -192,7 +192,7 @@ export const ScanToConnectHub: React.FC<ScanToConnectHubProps> = ({ personal, cl
       badge: 'Cloud Document',
       url: customCloudResumeUrl || 'https://praveenkumarverma.me',
       preview: customCloudResumeUrl ? customCloudResumeUrl : 'Google Drive / Dropbox / GitHub PDF Link',
-      description: 'Scan to open a direct cloud-hosted PDF file (e.g., Google Drive or GitHub release link). You can customize this link anytime.',
+      description: 'Scan to open a direct cloud-hosted PDF file (e.g., Google Drive or GitHub release link).',
       actionText: customCloudResumeUrl ? 'Open Cloud Document' : 'Configure Cloud Link',
       filename: 'Praveen_Kumar_CloudResume_QR.png',
     },

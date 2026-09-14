@@ -1,49 +1,17 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { PersonalInfo } from '../types';
-import { Code, TrendingUp, Award, Camera } from 'lucide-react';
-import { compressImageFile } from '../utils/imageOptimizer';
+import { Code, TrendingUp, Award } from 'lucide-react';
 
 interface HeroSectionProps {
   personal: PersonalInfo;
   onUpdateAvatar?: (avatarUrl: string) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ personal, onUpdateAvatar }) => {
-  const heroImage = personal.avatarUrl || '/images/home/banner/praveen-banner.jpg';
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleAvatarFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    try {
-      const compressedUrl = await compressImageFile(file, 800, 800, 0.82);
-      if (compressedUrl && onUpdateAvatar) {
-        onUpdateAvatar(compressedUrl);
-      }
-    } catch {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const dataUrl = event.target?.result as string;
-        if (dataUrl && onUpdateAvatar) {
-          onUpdateAvatar(dataUrl);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+export const HeroSection: React.FC<HeroSectionProps> = ({ personal }) => {
+  const heroImage = personal.avatarUrl || '/images/praveen-portrait.jpg?v=20260914';
 
   return (
     <section className="relative hero-section overflow-hidden pt-28 sm:pt-36 md:pt-40 pb-12 lg:pb-28 xl:pt-48 bg-white">
-      {/* Hidden input for updating hero portrait */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handleAvatarFileChange}
-        accept="image/*"
-        className="hidden"
-        aria-hidden="true"
-      />
-
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="lg:flex grid grid-cols-1 sm:grid-cols-2 gap-7 md:gap-8 items-center">
           {/* Left Column: Greeting & Titles */}
@@ -99,18 +67,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal, onUpdateAvat
                   (e.target as HTMLImageElement).src = '/images/praveen-portrait.jpg';
                 }}
               />
-              {/* Change Photo Button */}
-              {onUpdateAvatar && (
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  title="Upload original profile photo"
-                  className="absolute top-3 right-3 px-2.5 py-1.5 rounded-lg bg-white/90 hover:bg-white text-xs font-semibold text-neutral-800 shadow-sm border border-neutral-200 flex items-center gap-1.5"
-                >
-                  <Camera size={13} className="text-[#fe4300]" />
-                  <span>Update Photo</span>
-                </button>
-              )}
               {/* Floating mobile badge */}
               <div className="absolute -bottom-3 left-4 bg-white border border-neutral-200 rounded-full px-3.5 py-1.5 shadow-md flex items-center gap-2 text-xs font-semibold text-neutral-900">
                 <TrendingUp className="w-3.5 h-3.5 text-[#fe4300]" /> Fintech &amp; CSBS
@@ -136,19 +92,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ personal, onUpdateAvat
               (e.target as HTMLImageElement).src = '/images/praveen-portrait.jpg';
             }}
           />
-
-          {/* Change Photo Button on Desktop */}
-          {onUpdateAvatar && (
-            <button
-              type="button"
-              onClick={() => fileInputRef.current?.click()}
-              title="Upload original profile photo"
-              className="absolute top-4 right-4 z-30 px-3 py-1.5 rounded-lg bg-white/90 hover:bg-white text-xs font-semibold text-neutral-800 shadow-md border border-neutral-200 flex items-center gap-1.5 cursor-pointer opacity-90 hover:opacity-100 transition-opacity"
-            >
-              <Camera size={14} className="text-[#fe4300]" />
-              <span>Update Original Photo</span>
-            </button>
-          )}
 
           {/* Floating Desktop Badge 1: Python */}
           <div className="absolute top-10 -left-6 z-20 bg-white/95 backdrop-blur-md border border-neutral-200 rounded-full px-4 py-2 shadow-lg flex items-center gap-2.5 text-sm font-semibold text-neutral-900">
