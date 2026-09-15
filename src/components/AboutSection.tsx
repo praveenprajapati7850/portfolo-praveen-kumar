@@ -102,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                     {personal.happyClients}
                   </h3>
                   <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-800 font-medium">
-                    Certifications
+                    Certificates
                   </p>
                 </div>
 
@@ -111,7 +111,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                     {personal.projectsCompleted}
                   </h3>
                   <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-800 font-medium">
-                    National Honors
+                    Verified Credentials
                   </p>
                 </div>
               </div>
