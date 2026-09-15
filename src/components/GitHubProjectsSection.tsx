@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { GitHubRepoItem } from '../types';
 import { defaultGitHubRepos } from '../data/githubReposData';
 import {
@@ -35,20 +35,68 @@ interface GitHubProjectsSectionProps {
   userName?: string;
 }
 
-// Chart data for languages
-const languageDistributionData = [
-  { name: 'Python / Jupyter', value: 60, color: '#3572A5', repos: '2 Repos (Agri & Airbnb Analytics)' },
-  { name: 'TypeScript / React', value: 30, color: '#3178C6', repos: '1 Repo (Ask Praveen AI)' },
-  { name: 'HTML & Modern Web', value: 10, color: '#fe4300', repos: '1 Repo (Portfolio & Pages)' },
-];
+// Language color mapper
+function getLanguageColor(lang: string | null): string {
+  switch (lang?.toLowerCase()) {
+    case 'typescript':
+      return '#3178C6';
+    case 'javascript':
+      return '#f1e05a';
+    case 'python':
+    case 'jupyter notebook':
+      return '#3572A5';
+    case 'html':
+    case 'css':
+    case 'html/css':
+      return '#e34c26';
+    case 'c':
+    case 'c++':
+      return '#555555';
+    case 'sql':
+      return '#e38c00';
+    default:
+      return '#fe4300';
+  }
+}
 
-// Chart data for repository code & data scale (Normalized weight in KB)
-const repoScaleData = [
-  { name: 'Airbnb EDA', sizeKb: 16919, label: '16.9 MB', category: 'Data' },
-  { name: 'Agri Yield', sizeKb: 1840, label: '1.8 MB', category: 'Analytics' },
-  { name: 'Portfolio', sizeKb: 450, label: '450 KB', category: 'Web' },
-  { name: 'Ask Praveen AI', sizeKb: 120, label: '120 KB', category: 'AI' },
-];
+// Category detector
+function getRepoCategory(name: string, desc: string, lang: string | null): 'Data Analytics' | 'AI & Full-Stack' | 'Web & Portfolio' {
+  const combined = `${name} ${desc} ${lang}`.toLowerCase();
+  if (
+    combined.includes('ai') ||
+    combined.includes('gemini') ||
+    combined.includes('chat') ||
+    combined.includes('bot') ||
+    combined.includes('llm') ||
+    combined.includes('assistant')
+  ) {
+    return 'AI & Full-Stack';
+  }
+  if (
+    combined.includes('data') ||
+    combined.includes('analytics') ||
+    combined.includes('crop') ||
+    combined.includes('eda') ||
+    combined.includes('yield') ||
+    combined.includes('python') ||
+    combined.includes('jupyter')
+  ) {
+    return 'Data Analytics';
+  }
+  return 'Web & Portfolio';
+}
+
+// Tech stack generator
+function getTechStack(name: string, desc: string, lang: string | null): string[] {
+  const stack: string[] = [];
+  if (lang) stack.push(lang);
+  const combined = `${name} ${desc}`.toLowerCase();
+  if (combined.includes('portfolio') || combined.includes('react')) stack.push('React 19', 'Tailwind CSS', 'Vite');
+  if (combined.includes('gemini') || combined.includes('ai')) stack.push('Gemini AI', 'Express');
+  if (combined.includes('pandas') || combined.includes('analysis') || combined.includes('eda')) stack.push('Pandas', 'NumPy', 'Matplotlib');
+  if (combined.includes('pages')) stack.push('GitHub Pages');
+  return Array.from(new Set(stack)).slice(0, 5);
+}
 
 export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
   githubUrl = 'https://github.com/praveenprajapati7850',
@@ -60,7 +108,45 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
   const [isSyncing, setIsSyncing] = useState<boolean>(false);
   const [lastSynced, setLastSynced] = useState<string>('Live Connected');
 
-  // Fetch real GitHub repos dynamically from public API to keep stars/dates fresh
+  // Dynamically compute Language Distribution from active repos
+  const languageDistributionData = useMemo(() => {
+    const langCounts: Record<string, { count: number; color: string }> = {};
+    repos.forEach((r) => {
+      const lang = r.language || 'Other';
+      if (!langCounts[lang]) {
+        langCounts[lang] = { count: 0, color: r.languageColor || '#fe4300' };
+      }
+      langCounts[lang].count += 1;
+    });
+    const total = repos.length || 1;
+    return Object.entries(langCounts).map(([name, item]) => ({
+      name,
+      value: Math.round((item.count / total) * 100),
+      color: item.color,
+      count: item.count,
+    }));
+  }, [repos]);
+
+  // Dynamically compute Repository Data & Code Scale
+  const repoScaleData = useMemo(() => {
+    return [...repos]
+      .sort((a, b) => b.sizeKb - a.sizeKb)
+      .slice(0, 5)
+      .map((r) => {
+        const sizeMb = (r.sizeKb / 1024).toFixed(1);
+        const label = r.sizeKb >= 1024 ? `${sizeMb} MB` : `${r.sizeKb} KB`;
+        const shortName = r.name.length > 15 ? r.name.substring(0, 13) + '...' : r.name;
+        return {
+          name: shortName,
+          fullName: r.name,
+          sizeKb: r.sizeKb,
+          label,
+          category: r.category,
+        };
+      });
+  }, [repos]);
+
+  // Fetch real GitHub repos dynamically from public API to automatically discover new repos
   const syncWithGitHub = async () => {
     setIsSyncing(true);
     try {
@@ -68,24 +154,75 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
       if (res.ok) {
         const liveRepos = await res.json();
         if (Array.isArray(liveRepos) && liveRepos.length > 0) {
-          setRepos((prevRepos) =>
-            prevRepos.map((item) => {
-              const matched = liveRepos.find(
-                (lr: { name: string }) => lr.name.toLowerCase() === item.name.toLowerCase()
+          setRepos((prevRepos) => {
+            const merged: GitHubRepoItem[] = liveRepos.map((lr: any) => {
+              const existing = prevRepos.find(
+                (item) => item.name.toLowerCase() === lr.name.toLowerCase()
+              ) || defaultGitHubRepos.find(
+                (item) => item.name.toLowerCase() === lr.name.toLowerCase()
               );
-              if (matched) {
+
+              const updatedDate = new Date(lr.pushed_at || lr.updated_at);
+              const dateStr = !isNaN(updatedDate.getTime())
+                ? updatedDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
+                : 'Sep 2026';
+
+              if (existing) {
                 return {
-                  ...item,
-                  stars: matched.stargazers_count ?? item.stars,
-                  forks: matched.forks_count ?? item.forks,
-                  sizeKb: matched.size ?? item.sizeKb,
-                  defaultBranch: matched.default_branch || item.defaultBranch,
+                  ...existing,
+                  name: lr.name,
+                  fullName: lr.full_name,
+                  stars: lr.stargazers_count ?? existing.stars,
+                  forks: lr.forks_count ?? existing.forks,
+                  sizeKb: lr.size ?? existing.sizeKb,
+                  defaultBranch: lr.default_branch || existing.defaultBranch,
+                  updatedAt: dateStr,
+                  htmlUrl: lr.html_url || existing.htmlUrl,
+                  cloneUrl: lr.clone_url || existing.cloneUrl,
                 };
               }
-              return item;
-            })
-          );
-          setLastSynced('Just now');
+
+              // Brand new repository automatically detected from user's GitHub
+              const lang = lr.language || 'TypeScript';
+              const langColor = getLanguageColor(lang);
+              const category = getRepoCategory(lr.name, lr.description || '', lang);
+              const techStack = getTechStack(lr.name, lr.description || '', lang);
+
+              return {
+                id: `repo-${lr.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+                name: lr.name,
+                fullName: lr.full_name || `praveenprajapati7850/${lr.name}`,
+                description: lr.description || `Open-source ${category} repository engineered by Praveen Kumar.`,
+                htmlUrl: lr.html_url,
+                language: lang,
+                languageColor: langColor,
+                category: category,
+                techStack: techStack.length > 0 ? techStack : [lang, 'Git', 'Open Source'],
+                stars: lr.stargazers_count ?? 0,
+                forks: lr.forks_count ?? 0,
+                sizeKb: lr.size ?? 100,
+                updatedAt: dateStr,
+                defaultBranch: lr.default_branch || 'main',
+                cloneUrl: lr.clone_url || `https://github.com/praveenprajapati7850/${lr.name}.git`,
+                highlights: [
+                  `Active open-source repository deployed on GitHub (@praveenprajapati7850)`,
+                  `Engineered with modern ${lang} architecture and automated version control`,
+                  `Full open-source codebase available for cloning and inspection`,
+                ],
+                demoUrl: lr.homepage || undefined,
+              };
+            });
+
+            // Ensure any curated default items are preserved if not present in liveRepos
+            defaultGitHubRepos.forEach((def) => {
+              if (!merged.some((m) => m.name.toLowerCase() === def.name.toLowerCase())) {
+                merged.push(def);
+              }
+            });
+
+            return merged;
+          });
+          setLastSynced('Live Synced');
         }
       }
     } catch {
@@ -162,7 +299,7 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
             </button>
 
             <span className="text-xl sm:text-2xl font-bold text-[#fe4300]">
-              ( 05 )
+              ( {repos.length < 10 ? `0${repos.length}` : repos.length} )
             </span>
           </div>
         </div>
@@ -187,7 +324,7 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
                 </div>
               </div>
               <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-neutral-200 text-neutral-800">
-                4 Repos
+                {repos.length} Repos
               </span>
             </div>
 
@@ -259,7 +396,7 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
                 </div>
               </div>
               <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                EDA + AI
+                Live Dynamic
               </span>
             </div>
 
@@ -293,10 +430,10 @@ export const GitHubProjectsSection: React.FC<GitHubProjectsSectionProps> = ({
                     }}
                   />
                   <Bar dataKey="sizeKb" radius={[0, 6, 6, 0]}>
-                    <Cell fill="#3572A5" />
-                    <Cell fill="#10B981" />
-                    <Cell fill="#FE4300" />
-                    <Cell fill="#3178C6" />
+                    {repoScaleData.map((_entry, index) => {
+                      const colors = ['#3572A5', '#10B981', '#FE4300', '#3178C6', '#8B5CF6', '#F59E0B'];
+                      return <Cell key={`cell-bar-${index}`} fill={colors[index % colors.length]} />;
+                    })}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>

@@ -60,8 +60,17 @@ const GITHUB_REPO_LIST: RepoOption[] = [
     short: 'All Repos',
     url: 'https://github.com/praveenprajapati7850?tab=repositories',
     preview: 'github.com/praveenprajapati7850?tab=repositories',
-    description: 'Browse all 4 public open-source repositories and data science projects by Praveen.',
+    description: 'Browse all public open-source repositories and data science projects by Praveen.',
     filename: 'Praveen_Kumar_All_Repos_QR.png',
+  },
+  {
+    id: 'portfolio-app',
+    label: 'Portfolio Source App',
+    short: 'Portfolio App',
+    url: 'https://github.com/praveenprajapati7850/portfolo-praveen-kumar',
+    preview: 'github.com/praveenprajapati7850/portfolo-praveen-kumar',
+    description: 'Official developer portfolio React 19 + TypeScript codebase on GitHub.',
+    filename: 'Praveen_Kumar_Portfolio_App_QR.png',
   },
   {
     id: 'agri',

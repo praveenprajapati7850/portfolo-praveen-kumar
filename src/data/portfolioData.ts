@@ -10,9 +10,9 @@ export const defaultPortfolioData: PortfolioData = {
     website: 'https://www.linkedin.com/in/praveen-kumar-907443384',
     location: 'Rajasthan & Pondicherry, India',
     avatarUrl: '/images/praveen-portrait.jpg?v=20260914',
-    yearsExperience: 'Top 100',
-    happyClients: '4+',
-    projectsCompleted: '7 Verified Credentials',
+    yearsExperience: '2',
+    happyClients: '8+',
+    projectsCompleted: '5+',
     languages: ['Hindi (Native)', 'English (Professional)'],
     socials: {
       dribbble: 'https://www.linkedin.com/in/praveen-kumar-907443384',
