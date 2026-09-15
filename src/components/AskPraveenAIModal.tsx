@@ -20,7 +20,7 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
     {
       id: 'welcome',
       sender: 'ai',
-      text: `Hello! I'm Praveen's AI Portfolio Assistant. Ask me anything about his B.Tech + MBA studies, Aspire Leaders Program, Techfest IIT Bombay, Fintech research, or national honors!`,
+      text: `Hello! I'm Praveen's AI Portfolio Assistant. Ask me anything about his B.Tech + MBA studies, Aspire Leaders Program, Vidyadhan Scholarship, Techfest IIT Bombay, Fintech research, or national honors!`,
     },
   ]);
 
@@ -33,6 +33,7 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
   const quickQuestions = [
     "What is Praveen's degree & university?",
     "Tell me about the Aspire Leaders Program",
+    "What is the Vidyadhan Scholarship?",
     "What are Praveen's top skills & achievements?",
     "How can I contact Praveen?",
   ];
@@ -53,6 +54,8 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
         reply = `Praveen is pursuing an Integrated B.Tech + MBA in Computer Science & Business Systems (CSBS) at Pondicherry University. His curriculum bridges software engineering, enterprise algorithms, financial analytics, and strategic business management.`;
       } else if (lower.includes('techfest') || lower.includes('iit bombay') || lower.includes('offer letter')) {
         reply = `Praveen received an official Offer Letter as College Ambassador for Techfest, IIT Bombay (2026-27), Asia's Largest Science & Technology Festival, driving campus innovation and outreach!`;
+      } else if (lower.includes('vidyadhan') || lower.includes('scholarship') || lower.includes('sarojini')) {
+        reply = `Praveen is a recognized Vidyadhan Scholar, selected for the prestigious merit-based Vidyadhan Scholarship by the Sarojini Damodaran Foundation (SDF) in recognition of academic distinction, strong leadership, and high scholastic potential.`;
       } else if (lower.includes('aspire') || lower.includes('harvard') || lower.includes('leader')) {
         reply = `Praveen was selected for the prestigious Aspire Leaders Program 2026, an international leadership program founded by Harvard University faculty, developing cross-cultural leadership and communication skills.`;
       } else if (lower.includes('composit') || lower.includes('iit kharagpur') || lower.includes('ideathon')) {
@@ -62,7 +65,7 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
       } else if (lower.includes('tata') || lower.includes('crucible')) {
         reply = `Praveen served as a Tata Crucible Campus Ambassador representing Pondicherry University under the Tata Crucible Campus Ambassador Programme, earning an official Certificate of Appreciation.`;
       } else if (lower.includes('certif') || lower.includes('credential') || lower.includes('forage') || lower.includes('sebi') || lower.includes('mastercard') || lower.includes('offer')) {
-        reply = `Praveen holds verified credentials including: 1) Techfest IIT Bombay College Ambassador Offer Letter; 2) ISRO Space Day Quiz Top 100 Winner & ISRO Delegation Visit (November 2025); 3) Tata Crucible Campus Ambassador Certificate; 4) IIT Kharagpur COMPOSIT Ideathon Finalist; 5) Vodafone Idea & VOIS Data Visualization (ID: VFLMS26_163709); 6) Aspire Leaders Program Certificate (Harvard faculty–founded); 7) Internshala Student Partner (ISP) Appointment Letter; 8) AICTE Data Analytics Virtual Internship; 9) SEBI & NISM Investor Awareness (NISM20260000378433-001); 10) Mastercard Cybersecurity Job Simulation; 11) PNC Bank Financial Services Simulation.`;
+        reply = `Praveen holds verified credentials including: 1) Vidyadhan Scholarship Award (Sarojini Damodaran Foundation); 2) Techfest IIT Bombay College Ambassador Offer Letter; 3) ISRO Space Day Quiz Top 100 Winner & ISRO Delegation Visit (November 2025); 4) Tata Crucible Campus Ambassador Certificate; 5) IIT Kharagpur COMPOSIT Ideathon Finalist; 6) Vodafone Idea & VOIS Data Visualization (ID: VFLMS26_163709); 7) Aspire Leaders Program Certificate (Harvard faculty–founded); 8) Internshala Student Partner (ISP) Appointment Letter; 9) AICTE Data Analytics Virtual Internship; 10) SEBI & NISM Investor Awareness (NISM20260000378433-001); 11) Mastercard Cybersecurity Job Simulation; 12) PNC Bank Financial Services Simulation.`;
       } else if (lower.includes('project') || lower.includes('github') || lower.includes('repo') || lower.includes('code')) {
         reply = `Praveen has 5 active open-source repositories on GitHub (@praveenprajapati7850):
 1. portfolo-praveen-kumar: Full-stack React 19 & TypeScript portfolio application.
@@ -78,7 +81,7 @@ You can view the interactive charts and clone commands in the Projects & Code Re
       } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('hire') || lower.includes('reach')) {
         reply = `You can reach Praveen directly via email at ${personal.email} or call at ${personal.phone}. You can also connect on LinkedIn at https://www.linkedin.com/in/praveen-kumar-907443384, or use the interactive "Scan to Connect Hub" in the Contact section to scan QR codes for WhatsApp and vCard!`;
       } else {
-        reply = `Praveen Kumar is an Integrated B.Tech + MBA (CSBS) student at Pondicherry University, College Ambassador for Techfest IIT Bombay 2026-27, ISRO National Space Day Quiz Top 100 Winner (November 2025), Ideathon Finalist at IIT Kharagpur COMPOSIT, and Aspire Leader. Check out his verified credentials in the Works section!`;
+        reply = `Praveen Kumar is an Integrated B.Tech + MBA (CSBS) student at Pondicherry University, Vidyadhan Scholar, College Ambassador for Techfest IIT Bombay 2026-27, ISRO National Space Day Quiz Top 100 Winner (November 2025), Ideathon Finalist at IIT Kharagpur COMPOSIT, and Aspire Leader. Check out his verified credentials in the Works section!`;
       }
 
       setMessages((prev) => [

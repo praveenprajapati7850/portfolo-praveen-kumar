@@ -162,7 +162,7 @@ export const ScanToConnectHub: React.FC<ScanToConnectHubProps> = ({ personal, cl
     `URL;TYPE=LinkedIn:${personal.socials?.linkedin || 'https://www.linkedin.com/in/praveen-kumar-907443384'}`,
     `URL;TYPE=GitHub:${verifiedGithub}`,
     `ADR;TYPE=WORK:;;Pondicherry University;Puducherry;;605014;India`,
-    `NOTE:Aspire Leader '26 | CSBS & FinTech | ISRO Space Quiz Top 100 Winner (Nov '25)`,
+    `NOTE:Aspire Leader '26 | Vidyadhan Scholar | CSBS & FinTech | ISRO Space Quiz Top 100 Winner`,
     'END:VCARD',
   ].join('\n');
 

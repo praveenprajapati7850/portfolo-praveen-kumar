@@ -486,6 +486,22 @@ export const defaultPortfolioData: PortfolioData = {
       ],
     },
     {
+      id: 'ach-vidyadhan',
+      title: 'Vidyadhan Scholar — Sarojini Damodaran Foundation',
+      organization: 'Sarojini Damodaran Foundation (SDF)',
+      year: 'Merit Scholar',
+      category: 'Academic Merit',
+      badge: 'Vidyadhan Scholar',
+      credentialId: 'SDF-Vidyadhan-Scholar',
+      description:
+        'Awarded the prestigious, highly competitive Vidyadhan Scholarship by the Sarojini Damodaran Foundation (SDF), established to nurture high-achieving, meritorious students demonstrating leadership commitment, academic distinction, and personal integrity.',
+      highlights: [
+        'Selected for prestigious Vidyadhan Scholarship honoring academic excellence and character',
+        'Awarded by Sarojini Damodaran Foundation following rigorous merit-based evaluation',
+        'Recognized for sustained scholastic merit and community-minded leadership',
+      ],
+    },
+    {
       id: 'ach-rbse',
       title: 'Top 1% Academic Rank in State Board Examinations',
       organization: 'Rajasthan Board of Secondary Education (RBSE)',

@@ -69,7 +69,7 @@ function generateResumePDF() {
   doc.setFontSize(9.2);
   doc.setTextColor(bodyColor[0], bodyColor[1], bodyColor[2]);
   const summaryText =
-    'Analytical, high-performing Integrated B.Tech + MBA (Computer Science & Business Systems) scholar at Pondicherry University, fusing deep competencies in Financial Technology (FinTech), Data Analytics, and predictive modeling with corporate outreach leadership. Selected international fellow of the Harvard faculty-founded Aspire Leaders Program 2026. Proficient in Python, SQL, C, and business intelligence suites, with extensive hands-on experience designing automated data analytics pipelines, modeling equity risk metrics, and directing large-scale youth campaigns across India for institutions including Techfest IIT Bombay, Paytm, Tata Crucible, and PhysicsWallah.';
+    'Analytical, high-performing Integrated B.Tech + MBA (Computer Science & Business Systems) scholar at Pondicherry University, fusing deep competencies in Financial Technology (FinTech), Data Analytics, and predictive modeling with corporate outreach leadership. Selected Vidyadhan Scholar and international fellow of the Harvard faculty-founded Aspire Leaders Program 2026. Proficient in Python, SQL, C, and business intelligence suites, with extensive hands-on experience designing automated data analytics pipelines, modeling equity risk metrics, and directing large-scale youth campaigns across India for institutions including Techfest IIT Bombay, Paytm, Tata Crucible, and PhysicsWallah.';
   const splitSummary = doc.splitTextToSize(summaryText, contentWidth);
   doc.text(splitSummary, margin, y);
   y += splitSummary.length * 12.2 + 10;
@@ -342,6 +342,10 @@ function generateResumePDF() {
       desc: 'Chosen to represent Pondicherry University for Asia\'s Largest Science and Technology Festival, driving outreach and workshops across collegiate networks.',
     },
     {
+      name: 'Vidyadhan Scholar — Sarojini Damodaran Foundation:',
+      desc: 'Awarded prestigious merit-based scholarship by the Sarojini Damodaran Foundation recognizing academic excellence, strong scholastic leadership, and character.',
+    },
+    {
       name: 'Selected Scholar — Aspire Leaders Program 2026:',
       desc: 'Awarded fully funded global fellowship founded by Harvard University faculty, collaborating with top-tier international student leaders on systemic community projects.',
     },
@@ -381,6 +385,7 @@ function generateResumePDF() {
     { title: 'IIT Kharagpur COMPOSIT 2026', detail: 'Ideathon Finalist Award (Society of Metallurgical Engineers, IIT KGP).' },
     { title: 'Vodafone Idea Foundation & VOIS', detail: 'Data Visualization Certification (Credential ID: VFLMS26_163709).' },
     { title: 'Aspire Institute (Harvard Faculty–Founded)', detail: '2026 Aspire Leaders Program Certificate (40 Hours Coursework).' },
+    { title: 'Vidyadhan Scholarship Award', detail: 'Sarojini Damodaran Foundation (SDF Merit Scholar).' },
     { title: 'Internshala', detail: 'Official Internshala Student Partner (ISP) Appointment Credential.' },
     { title: 'AICTE & EduSkills', detail: 'Virtual Internship in Data Analytics (Python, SQL & Business Intelligence).' },
     { title: 'SEBI & NISM', detail: 'Investor Awareness Test Certification (Enrollment No: NISM20260000378433-001).' },

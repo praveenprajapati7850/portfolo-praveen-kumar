@@ -75,7 +75,7 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
             PROFESSIONAL SUMMARY
           </h2>
           <p className="text-neutral-800 text-xs sm:text-[12px] leading-relaxed text-justify">
-            Analytical, high-performing Integrated B.Tech + MBA (Computer Science &amp; Business Systems) scholar at Pondicherry University, fusing deep competencies in Financial Technology (FinTech), Data Analytics, and predictive modeling with corporate outreach leadership. Selected international fellow of the Harvard faculty-founded Aspire Leaders Program 2026. Proficient in Python, SQL, C, and modern business intelligence suites, with extensive hands-on experience designing automated data analytics pipelines, modeling equity risk metrics, and directing large-scale youth campaigns across India for institutions including Techfest IIT Bombay, Paytm, Tata Crucible, and PhysicsWallah.
+            Analytical, high-performing Integrated B.Tech + MBA (Computer Science &amp; Business Systems) scholar at Pondicherry University, fusing deep competencies in Financial Technology (FinTech), Data Analytics, and predictive modeling with corporate outreach leadership. Selected Vidyadhan Scholar and international fellow of the Harvard faculty-founded Aspire Leaders Program 2026. Proficient in Python, SQL, C, and modern business intelligence suites, with extensive hands-on experience designing automated data analytics pipelines, modeling equity risk metrics, and directing large-scale youth campaigns across India for institutions including Techfest IIT Bombay, Paytm, Tata Crucible, and PhysicsWallah.
           </p>
         </div>
 
@@ -361,6 +361,9 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
               <strong className="font-bold text-neutral-950">Official College Ambassador — Techfest, IIT Bombay 2026–27:</strong> Chosen to represent Pondicherry University for Asia&apos;s Largest Science and Technology Festival, driving outreach and workshops across collegiate networks.
             </li>
             <li className="break-inside-avoid">
+              <strong className="font-bold text-neutral-950">Vidyadhan Scholar — Sarojini Damodaran Foundation:</strong> Awarded prestigious merit-based scholarship by the Sarojini Damodaran Foundation recognizing academic excellence, strong scholastic leadership, and character.
+            </li>
+            <li className="break-inside-avoid">
               <strong className="font-bold text-neutral-950">Selected Scholar — Aspire Leaders Program 2026:</strong> Awarded fully funded global fellowship founded by Harvard University faculty, collaborating with top-tier international student leaders on systemic community projects.
             </li>
             <li className="break-inside-avoid">
@@ -396,6 +399,9 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
             </li>
             <li className="break-inside-avoid">
               <strong className="font-bold text-neutral-950">Aspire Institute (Harvard Faculty–Founded)</strong> — 2026 Aspire Leaders Program Certificate (40 Hours Coursework).
+            </li>
+            <li className="break-inside-avoid">
+              <strong className="font-bold text-neutral-950">Vidyadhan Scholarship Award</strong> — Sarojini Damodaran Foundation (SDF Merit Scholar).
             </li>
             <li className="break-inside-avoid">
               <strong className="font-bold text-neutral-950">Internshala</strong> — Official Internshala Student Partner (ISP) Appointment Credential.

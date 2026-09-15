@@ -72,7 +72,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ personal }) => {
                 <div className="p-3.5 rounded-xl bg-white border border-neutral-200 shadow-xs flex items-start gap-3">
                   <Award className="w-5 h-5 text-[#fe4300] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-semibold text-neutral-900">Vidvadhan Scholar</h4>
+                    <h4 className="text-sm font-semibold text-neutral-900">Vidyadhan Scholar</h4>
                     <p className="text-xs text-neutral-500">Academic &amp; Leadership Distinction</p>
                   </div>
                 </div>
