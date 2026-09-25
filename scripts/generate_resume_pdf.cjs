@@ -139,64 +139,64 @@ function generateResumePDF() {
   });
   y += 10;
 
-  // Section 3: Technical & FinTech Projects
-  y = drawSectionHeading('Technical & Analytical Projects', y);
+  // Section 3: Top Featured Projects
+  y = drawSectionHeading('Top Featured Projects', y);
 
   const projects = [
     {
-      title: 'Financial Market Prediction & Quantitative Risk Model',
-      stack: 'Python, Pandas, NumPy, Scikit-Learn, Matplotlib',
+      title: 'UPI QR Code Splitter (Android App)',
+      stack: 'Kotlin, Jetpack Compose, Google ML Kit, CameraX, Android SDK',
       bullets: [
-        'Constructed quantitative forecasting pipeline evaluating equity price volatility, momentum metrics, and historical market behavior.',
-        'Implemented feature engineering and regression algorithms to forecast price direction with backtested validation and risk reporting.',
+        'Engineered an Android app using Jetpack Compose and Google ML Kit to scan merchant UPI QR codes via CameraX in real-time.',
+        'Dynamically splits transactions up to ₹10,000 into sub-₹2,000 QR codes (e.g. ₹1,999) to avoid bank surcharges and OTP friction.',
       ],
     },
     {
-      title: 'VOIS Business Intelligence & Customer Analytics Dashboard',
-      stack: 'Python, EDA, Jupyter Notebook, Seaborn, Power BI',
+      title: 'Seasonal Agriculture Performance Analysis',
+      stack: 'Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook',
       bullets: [
-        'Built interactive exploratory data pipelines analyzing telecom customer behavioral patterns, usage cohorts, and retention factors.',
-        'Synthesized high-impact visual dashboards providing actionable recommendations for churn reduction and customer satisfaction.',
+        'Analyzed multi-year Indian agriculture datasets linking monsoon rainfall variations to crop yields across farming zones.',
+        'Built correlation heatmaps and visualization charts to identify yield drivers and support harvest planning.',
       ],
     },
     {
-      title: 'Relational Enterprise Database & University Management Schema',
-      stack: 'SQL, PostgreSQL, Relational Schema Architecture, C',
+      title: 'Airbnb Hotel Booking & Hospitality Analytics',
+      stack: 'Python, Exploratory Data Analysis, Pandas, Matplotlib, Seaborn',
       bullets: [
-        'Architected normalized 3NF database schema handling student academic records, course prerequisites, and financial ledger billing.',
-        'Authored optimized multi-table JOIN queries, indexing strategies, and stored procedures ensuring ACID transaction compliance.',
+        'Performed exploratory data analysis on 10,000+ hospitality records to analyze booking trends, lead times, and cancellations.',
+        'Uncovered key seasonal pricing patterns and cancellation determinants to formulate revenue-optimization insights.',
       ],
     },
   ];
 
   projects.forEach(p => {
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9.6);
+    doc.setFontSize(9.4);
     doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
     doc.text(p.title, margin, y);
 
     doc.setFont('helvetica', 'italic');
-    doc.setFontSize(8.5);
+    doc.setFontSize(8.2);
     doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
     doc.text(`[${p.stack}]`, margin + contentWidth, y, { align: 'right' });
-    y += 11.5;
+    y += 11;
 
     doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8.8);
+    doc.setFontSize(8.7);
     doc.setTextColor(bodyColor[0], bodyColor[1], bodyColor[2]);
     p.bullets.forEach(b => {
       const lines = doc.splitTextToSize(`•  ${b}`, contentWidth - 8);
       doc.text(lines, margin + 8, y);
-      y += lines.length * 11.5 + 2;
+      y += lines.length * 11.2 + 2;
     });
-    y += 5;
+    y += 4;
   });
-  y += 7;
+  y += 6;
 
-  // Section 4: Professional Experience & Leadership
-  y = drawSectionHeading('Professional Experience & Leadership', y);
+  // Section 4: Professional Experience & Internships
+  y = drawSectionHeading('Professional Experience & Key Internships', y);
 
-  const exps = [
+  const expsPage1 = [
     {
       role: 'College Ambassador',
       company: 'Techfest, IIT Bombay',
@@ -216,14 +216,6 @@ function generateResumePDF() {
       ],
     },
     {
-      role: 'Campus Ambassador (Internship Program)',
-      company: 'Aspire Institute',
-      period: 'Aug 2026 – Present',
-      bullets: [
-        'Organized campus-wide awareness sessions on leadership fellowships, mentoring applicants and expanding active student engagement by 45%.',
-      ],
-    },
-    {
       role: 'Campus Ambassador',
       company: 'Paytm, India',
       period: 'Jul 2026 – Present',
@@ -231,19 +223,11 @@ function generateResumePDF() {
         'Led digital financial literacy and FinTech adoption initiatives across campus, educating 500+ students on contactless payments and UPI.',
       ],
     },
-    {
-      role: 'Campus Ambassador (Marketing Training Program)',
-      company: 'Tata Crucible, India',
-      period: 'Apr 2026 – May 2026',
-      bullets: [
-        'Spearheaded digital promotional outreach for India\'s flagship corporate quiz, recruiting 100+ qualified participants and achieving 60% growth.',
-      ],
-    },
   ];
 
-  exps.forEach(exp => {
+  expsPage1.forEach(exp => {
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9.6);
+    doc.setFontSize(9.5);
     doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
     doc.text(exp.role, margin, y);
     const rw = doc.getTextWidth(exp.role);
@@ -253,17 +237,17 @@ function generateResumePDF() {
     doc.text(` | ${exp.company}`, margin + rw, y);
     doc.setFont('helvetica', 'bold');
     doc.text(exp.period, margin + contentWidth, y, { align: 'right' });
-    y += 11.5;
+    y += 11;
 
     doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8.8);
+    doc.setFontSize(8.7);
     doc.setTextColor(bodyColor[0], bodyColor[1], bodyColor[2]);
     exp.bullets.forEach(b => {
       const lines = doc.splitTextToSize(`•  ${b}`, contentWidth - 8);
       doc.text(lines, margin + 8, y);
-      y += lines.length * 11.5 + 2;
+      y += lines.length * 11.2 + 2;
     });
-    y += 4;
+    y += 3.5;
   });
 
   // Page 1 Footer Line
@@ -296,7 +280,55 @@ function generateResumePDF() {
   doc.line(margin, y2, margin + contentWidth, y2);
   y2 += 13;
 
-  // Section 5: Technical & Professional Competencies
+  // Section 5: Strategic Ambassadorships & Campus Leadership
+  y2 = drawSectionHeading('Strategic Ambassadorships & Leadership Initiatives', y2);
+
+  const ambassadorships = [
+    {
+      role: 'Campus Ambassador (Internship Program)',
+      company: 'Aspire Institute (Founded by Harvard Faculty)',
+      period: 'Aug 2026 – Present',
+      bullets: [
+        'Organized campus-wide awareness sessions on leadership fellowships, mentoring applicants and expanding active student engagement by 45%.',
+      ],
+    },
+    {
+      role: 'Campus Ambassador (Marketing Training Program)',
+      company: 'Tata Crucible & Internshala',
+      period: 'Apr 2026 – May 2026',
+      bullets: [
+        'Spearheaded digital promotional outreach for India\'s flagship corporate quiz, recruiting 100+ qualified participants and achieving 60% growth.',
+      ],
+    },
+  ];
+
+  ambassadorships.forEach(exp => {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9.5);
+    doc.setTextColor(darkColor[0], darkColor[1], darkColor[2]);
+    doc.text(exp.role, margin, y2);
+    const rw = doc.getTextWidth(exp.role);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(mutedColor[0], mutedColor[1], mutedColor[2]);
+    doc.text(` | ${exp.company}`, margin + rw, y2);
+    doc.setFont('helvetica', 'bold');
+    doc.text(exp.period, margin + contentWidth, y2, { align: 'right' });
+    y2 += 11;
+
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8.7);
+    doc.setTextColor(bodyColor[0], bodyColor[1], bodyColor[2]);
+    exp.bullets.forEach(b => {
+      const lines = doc.splitTextToSize(`•  ${b}`, contentWidth - 8);
+      doc.text(lines, margin + 8, y2);
+      y2 += lines.length * 11.2 + 2;
+    });
+    y2 += 3.5;
+  });
+  y2 += 4;
+
+  // Section 6: Technical & Professional Competencies
   y2 = drawSectionHeading('Technical & Professional Competencies', y2);
 
   const skills = [

@@ -125,70 +125,73 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
           </div>
         </div>
 
-        {/* Section 3: Technical & FinTech Projects */}
+        {/* Section 3: Top Featured Projects (FinTech, AI & Analytics) */}
         <div className="pt-3">
           <h2 className="text-xs sm:text-[12.5px] font-bold tracking-wider uppercase text-neutral-950 border-b border-neutral-950 pb-0.5 mb-1.5">
-            TECHNICAL &amp; ANALYTICAL PROJECTS
+            TOP FEATURED PROJECTS
           </h2>
 
           <div className="space-y-2 text-xs sm:text-[12px]">
+            {/* Project 1: UPI QR Code Splitter */}
             <div className="break-inside-avoid">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
-                <span>Financial Market Prediction &amp; Quantitative Risk Model</span>
+                <span>UPI QR Code Splitter (Android App)</span>
                 <span className="font-normal text-neutral-600 italic text-[11px]">
-                  [Python, Pandas, NumPy, Scikit-Learn, Matplotlib]
+                  [Kotlin, Jetpack Compose, Google ML Kit, CameraX, Android SDK]
                 </span>
               </div>
               <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
                 <li>
-                  Constructed quantitative forecasting pipeline evaluating equity price volatility, momentum metrics, and historical market behavior.
+                  Engineered an Android app using Jetpack Compose and Google ML Kit to scan merchant UPI QR codes via CameraX in real-time.
                 </li>
                 <li>
-                  Implemented feature engineering and regression algorithms to forecast price direction with backtested validation and risk reporting.
+                  Dynamically splits transactions up to ₹10,000 into sub-₹2,000 QR codes (e.g. ₹1,999) to avoid bank surcharges and OTP friction.
                 </li>
               </ul>
             </div>
 
+            {/* Project 2: Seasonal Agriculture Performance Analysis */}
             <div className="break-inside-avoid">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
-                <span>VOIS Business Intelligence &amp; Customer Analytics Dashboard</span>
+                <span>Seasonal Agriculture Performance Analysis</span>
                 <span className="font-normal text-neutral-600 italic text-[11px]">
-                  [Python, EDA, Jupyter Notebook, Seaborn, Power BI]
+                  [Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook]
                 </span>
               </div>
               <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
                 <li>
-                  Built interactive exploratory data pipelines analyzing telecom customer behavioral patterns, usage cohorts, and retention factors.
+                  Analyzed multi-year Indian agriculture datasets linking monsoon rainfall variations to crop yields across farming zones.
                 </li>
                 <li>
-                  Synthesized high-impact visual dashboards providing actionable recommendations for churn reduction and customer satisfaction.
+                  Built correlation heatmaps and visualization charts to identify yield drivers and support harvest planning.
                 </li>
               </ul>
             </div>
 
+            {/* Project 3: Airbnb Hotel Booking Analysis */}
             <div className="break-inside-avoid">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
-                <span>Relational Enterprise Database &amp; University Management Schema</span>
+                <span>Airbnb Hotel Booking &amp; Hospitality Analytics</span>
                 <span className="font-normal text-neutral-600 italic text-[11px]">
-                  [SQL, PostgreSQL, Relational Schema Architecture, C]
+                  [Python, Exploratory Data Analysis, Pandas, Matplotlib, Seaborn]
                 </span>
               </div>
               <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
                 <li>
-                  Architected normalized 3NF database schema handling student academic records, course prerequisites, and financial ledger billing.
+                  Performed exploratory data analysis on 10,000+ hospitality records to analyze booking trends, lead times, and cancellations.
                 </li>
                 <li>
-                  Authored optimized multi-table JOIN queries, indexing strategies, and stored procedures ensuring ACID transaction compliance.
+                  Uncovered key seasonal pricing patterns and cancellation determinants to formulate revenue-optimization insights.
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Section 4: Professional Experience & Leadership */}
+        {/* Section 4: Professional Experience & Key Internships */}
         <div className="pt-3">
           <h2 className="text-xs sm:text-[12.5px] font-bold tracking-wider uppercase text-neutral-950 border-b border-neutral-950 pb-0.5 mb-1.5">
-            PROFESSIONAL EXPERIENCE &amp; LEADERSHIP
+            PROFESSIONAL EXPERIENCE &amp; KEY INTERNSHIPS
           </h2>
 
           <div className="space-y-2 text-xs sm:text-[12px]">
@@ -234,22 +237,6 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
             <div className="break-inside-avoid">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
                 <div>
-                  <span>Campus Ambassador (Internship Program)</span>
-                  <span className="font-normal text-neutral-700"> | Aspire Institute</span>
-                </div>
-                <span className="font-semibold text-neutral-700 text-xs">Aug 2026 – Present</span>
-              </div>
-              <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
-                <li>
-                  Organized campus-wide awareness sessions on leadership fellowships, mentoring applicants and expanding active student engagement by 45%.
-                </li>
-              </ul>
-            </div>
-
-            {/* Exp 4 */}
-            <div className="break-inside-avoid">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
-                <div>
                   <span>Campus Ambassador</span>
                   <span className="font-normal text-neutral-700"> | Paytm, India</span>
                 </div>
@@ -258,22 +245,6 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
               <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
                 <li>
                   Led digital financial literacy and FinTech adoption initiatives across campus, educating 500+ students on contactless payments and UPI.
-                </li>
-              </ul>
-            </div>
-
-            {/* Exp 5 */}
-            <div className="break-inside-avoid">
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
-                <div>
-                  <span>Campus Ambassador (Marketing Training Program)</span>
-                  <span className="font-normal text-neutral-700"> | Tata Crucible, India</span>
-                </div>
-                <span className="font-semibold text-neutral-700 text-xs">Apr 2026 – May 2026</span>
-              </div>
-              <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
-                <li>
-                  Spearheaded digital promotional outreach for India&apos;s flagship corporate quiz, recruiting 100+ qualified participants and achieving 60% growth.
                 </li>
               </ul>
             </div>
@@ -313,8 +284,47 @@ export const ResumeDocument: React.FC<ResumeDocumentProps> = ({
           </span>
         </div>
 
-        {/* Section 5: Technical & Professional Competencies */}
+        {/* Section 5: Strategic Ambassadorships & Leadership Initiatives */}
         <div>
+          <h2 className="text-xs sm:text-[12.5px] font-bold tracking-wider uppercase text-neutral-950 border-b border-neutral-950 pb-0.5 mb-1.5">
+            STRATEGIC AMBASSADORSHIPS &amp; LEADERSHIP INITIATIVES
+          </h2>
+
+          <div className="space-y-2 text-xs sm:text-[12px] mb-3">
+            <div className="break-inside-avoid">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
+                <div>
+                  <span>Campus Ambassador (Internship Program)</span>
+                  <span className="font-normal text-neutral-700"> | Aspire Institute (Founded by Harvard Faculty)</span>
+                </div>
+                <span className="font-semibold text-neutral-700 text-xs">Aug 2026 – Present</span>
+              </div>
+              <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
+                <li>
+                  Organized campus-wide awareness sessions on leadership fellowships, mentoring applicants and expanding active student engagement by 45%.
+                </li>
+              </ul>
+            </div>
+
+            <div className="break-inside-avoid">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between font-bold text-neutral-950">
+                <div>
+                  <span>Campus Ambassador (Marketing Training Program)</span>
+                  <span className="font-normal text-neutral-700"> | Tata Crucible &amp; Internshala</span>
+                </div>
+                <span className="font-semibold text-neutral-700 text-xs">Apr 2026 – May 2026</span>
+              </div>
+              <ul className="list-disc list-outside ml-4 mt-0.5 text-neutral-700 space-y-0.5 text-[11.5px] sm:text-[12px]">
+                <li>
+                  Spearheaded digital promotional outreach for India&apos;s flagship corporate quiz, recruiting 100+ qualified participants and achieving 60% growth.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Section 6: Technical & Professional Competencies */}
+        <div className="pt-1">
           <h2 className="text-xs sm:text-[12.5px] font-bold tracking-wider uppercase text-neutral-950 border-b border-neutral-950 pb-0.5 mb-1.5">
             TECHNICAL &amp; PROFESSIONAL COMPETENCIES
           </h2>

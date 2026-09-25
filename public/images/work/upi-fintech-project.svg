@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#121829" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="brandOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fe4300" />
+      <stop offset="100%" stop-color="#ff6b35" />
+    </linearGradient>
+    <linearGradient id="androidGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ddc84" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="550" fill="url(#bgGrad)" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="0" y1="500" x2="800" y2="500" />
+    <line x1="100" y1="0" x2="100" y2="550" />
+    <line x1="200" y1="0" x2="200" y2="550" />
+    <line x1="300" y1="0" x2="300" y2="550" />
+    <line x1="400" y1="0" x2="400" y2="550" />
+    <line x1="500" y1="0" x2="500" y2="550" />
+    <line x1="600" y1="0" x2="600" y2="550" />
+    <line x1="700" y1="0" x2="700" y2="550" />
+  </g>
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="150" cy="120" r="140" fill="#3ddc84" opacity="0.1" filter="url(#glow)" />
+  <circle cx="650" cy="380" r="160" fill="#fe4300" opacity="0.1" filter="url(#glow)" />
+
+  <!-- Top Header Pill -->
+  <rect x="50" y="38" width="310" height="34" rx="17" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+  <circle cx="68" cy="55" r="5" fill="#3ddc84" />
+  <text x="82" y="60" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="1">ANDROID &amp; FINTECH APPLICATION</text>
+
+  <!-- Right Badge: Kotlin & Compose -->
+  <rect x="570" y="38" width="180" height="34" rx="8" fill="url(#androidGreen)" />
+  <text x="660" y="60" fill="#090d16" font-family="system-ui, sans-serif" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="0.5">JETPACK COMPOSE + ML KIT</text>
+
+  <!-- Main Title Area -->
+  <text x="50" y="112" fill="#ffffff" font-family="system-ui, sans-serif" font-size="28" font-weight="800">UPI QR Code Splitter</text>
+  <text x="50" y="148" fill="#fe4300" font-family="system-ui, sans-serif" font-size="22" font-weight="700">Sub-₹2,000 Surcharge Bypass &amp; Instant UPI Deep Link Engine</text>
+  <text x="50" y="174" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="400">Real-time CameraX scan, ML Kit barcode vision, and sequential payment generation</text>
+
+  <!-- Flow Boxes -->
+  <!-- Left Box: Camera & Scan -->
+  <g transform="translate(50, 205)">
+    <rect width="210" height="205" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#3ddc84" opacity="0.15" />
+    <!-- Camera icon -->
+    <path d="M 26,30 L 30,26 L 38,26 L 42,30 L 46,30 L 46,42 L 22,42 L 22,30 Z M 34,39 A 4,4 0 1,0 34,31 A 4,4 0 1,0 34,39" fill="none" stroke="#3ddc84" stroke-width="2" />
+    <text x="62" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="700">CameraX Vision</text>
+    <text x="62" y="48" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Google ML Kit</text>
+
+    <rect x="16" y="68" width="178" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="85" fill="#38bdf8" font-family="monospace" font-size="10">Target: Bill ₹4,500</text>
+
+    <rect x="16" y="102" width="178" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="119" fill="#3ddc84" font-family="monospace" font-size="10">Barcode: upi://pay?...</text>
+
+    <rect x="16" y="136" width="178" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="153" fill="#fbbf24" font-family="monospace" font-size="10">Standee Auto-Detect</text>
+
+    <rect x="16" y="174" width="178" height="8" rx="4" fill="#334155" />
+    <rect x="16" y="174" width="160" height="8" rx="4" fill="#3ddc84" />
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(268, 298)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="#3ddc84" stroke-width="2.5" stroke-dasharray="4,3" />
+    <polygon points="22,-4 29,0 22,4" fill="#3ddc84" />
+    <text x="14" y="-8" fill="#3ddc84" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">SPLIT</text>
+  </g>
+
+  <!-- Center Box: Splitter Logic -->
+  <g transform="translate(305, 195)">
+    <rect width="215" height="225" rx="14" fill="url(#cardGrad)" stroke="#fe4300" stroke-width="2" />
+    
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#fe4300" opacity="0.15" />
+    <text x="34" y="40" fill="#fe4300" font-family="system-ui, sans-serif" font-size="20" font-weight="800" text-anchor="middle">₹</text>
+    
+    <text x="62" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Smart Max Split</text>
+    <text x="62" y="48" fill="#fe4300" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Sub-₹2,000 Chunks</text>
+
+    <rect x="16" y="65" width="183" height="32" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="26" y="80" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Part 1 (No OTP / Cap)</text>
+    <text x="26" y="93" fill="#3ddc84" font-family="system-ui, sans-serif" font-size="11" font-weight="800">₹1,999 · QR READY</text>
+
+    <rect x="16" y="104" width="183" height="32" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="26" y="119" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Part 2 (Consecutive)</text>
+    <text x="26" y="132" fill="#3ddc84" font-family="system-ui, sans-serif" font-size="11" font-weight="800">₹1,999 · QR READY</text>
+
+    <rect x="16" y="143" width="183" height="32" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+    <text x="26" y="158" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9">Part 3 (Remainder)</text>
+    <text x="26" y="171" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="11" font-weight="800">₹502 · QR READY</text>
+
+    <text x="107" y="206" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Total: ₹4,500 Zero Surcharge</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(528, 298)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="#fe4300" stroke-width="2.5" stroke-dasharray="4,3" />
+    <polygon points="22,-4 29,0 22,4" fill="#fe4300" />
+    <text x="14" y="-8" fill="#fe4300" font-family="system-ui, sans-serif" font-size="9" font-weight="700" text-anchor="middle">PAY</text>
+  </g>
+
+  <!-- Right Box: Instant UPI Apps -->
+  <g transform="translate(565, 205)">
+    <rect width="185" height="205" rx="14" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5" />
+    <rect x="16" y="16" width="36" height="36" rx="8" fill="#06b6d4" opacity="0.15" />
+    <path d="M 28,26 L 40,26 L 40,42 L 28,42 Z M 32,24 L 36,24" fill="none" stroke="#06b6d4" stroke-width="2" />
+    <text x="60" y="32" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="14" font-weight="700">1-Tap Intent</text>
+    <text x="60" y="48" fill="#64748b" font-family="system-ui, sans-serif" font-size="11">Deep Linking</text>
+
+    <rect x="16" y="68" width="153" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="85" fill="#3ddc84" font-family="sans-serif" font-size="10">✓ Google Pay</text>
+
+    <rect x="16" y="102" width="153" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="119" fill="#38bdf8" font-family="sans-serif" font-size="10">✓ PhonePe</text>
+
+    <rect x="16" y="136" width="153" height="26" rx="6" fill="#0f172a" />
+    <text x="26" y="153" fill="#fbbf24" font-family="sans-serif" font-size="10">✓ Paytm / BHIM</text>
+
+    <rect x="16" y="174" width="153" height="8" rx="4" fill="#334155" />
+    <rect x="16" y="174" width="153" height="8" rx="4" fill="#fe4300" />
+  </g>
+
+  <!-- Bottom Tech Stack Pills -->
+  <g transform="translate(50, 465)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="105" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="52" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Kotlin 2.0</text>
+
+    <!-- Pill 2 -->
+    <rect x="115" y="0" width="130" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="180" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Jetpack Compose</text>
+
+    <!-- Pill 3 -->
+    <rect x="255" y="0" width="125" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="317" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Google ML Kit</text>
+
+    <!-- Pill 4 -->
+    <rect x="390" y="0" width="105" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="442" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">CameraX API</text>
+
+    <!-- Pill 5 -->
+    <rect x="505" y="0" width="105" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="557" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">ZXing Core</text>
+
+    <!-- Pill 6 -->
+    <rect x="620" y="0" width="125" height="30" rx="15" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <text x="682" y="19" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="middle">Material Design 3</text>
+  </g>
+
+  <!-- Bottom Watermark -->
+  <text x="750" y="525" fill="#475569" font-family="system-ui, sans-serif" font-size="11" font-weight="600" text-anchor="end">Praveen Kumar · Android Engineering Showcase</text>
+</svg>

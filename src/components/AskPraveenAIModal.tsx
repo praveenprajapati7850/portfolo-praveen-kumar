@@ -31,10 +31,11 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
   }, [messages, isOpen]);
 
   const quickQuestions = [
+    "Tell me about Praveen's UPI & FinTech project",
     "What is Praveen's degree & university?",
     "Tell me about the Aspire Leaders Program",
     "What is the Vidyadhan Scholarship?",
-    "What are Praveen's top skills & achievements?",
+    "What are Praveen's top technical projects?",
     "How can I contact Praveen?",
   ];
 
@@ -50,7 +51,9 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
       let reply = '';
       const lower = userText.toLowerCase();
 
-      if (lower.includes('degree') || lower.includes('university') || lower.includes('education') || lower.includes('college') || lower.includes('study')) {
+      if (lower.includes('upi') || lower.includes('splitter') || lower.includes('qr code splitter')) {
+        reply = `Praveen engineered the "UPI QR Code Splitter", an Android application built with Kotlin, Jetpack Compose, and Google ML Kit. It scans merchant UPI QR codes using CameraX and splits large transactions (up to ₹10,000) into safe consecutive sub-₹2,000 QR codes (e.g. ₹1,999, ₹1,998) to bypass extra OTP steps, bank surcharge limits, and daily caps, complete with direct deep links to Google Pay, PhonePe, and Paytm.`;
+      } else if (lower.includes('degree') || lower.includes('university') || lower.includes('education') || lower.includes('college') || lower.includes('study')) {
         reply = `Praveen is pursuing an Integrated B.Tech + MBA in Computer Science & Business Systems (CSBS) at Pondicherry University. His curriculum bridges software engineering, enterprise algorithms, financial analytics, and strategic business management.`;
       } else if (lower.includes('techfest') || lower.includes('iit bombay') || lower.includes('offer letter')) {
         reply = `Praveen received an official Offer Letter as College Ambassador for Techfest, IIT Bombay (2026-27), Asia's Largest Science & Technology Festival, driving campus innovation and outreach!`;
@@ -67,13 +70,11 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
       } else if (lower.includes('certif') || lower.includes('credential') || lower.includes('forage') || lower.includes('sebi') || lower.includes('mastercard') || lower.includes('offer')) {
         reply = `Praveen holds verified credentials including: 1) Vidyadhan Scholarship Award (Sarojini Damodaran Foundation); 2) Techfest IIT Bombay College Ambassador Offer Letter; 3) ISRO Space Day Quiz Top 100 Winner & ISRO Delegation Visit (November 2025); 4) Tata Crucible Campus Ambassador Certificate; 5) IIT Kharagpur COMPOSIT Ideathon Finalist; 6) Vodafone Idea & VOIS Data Visualization (ID: VFLMS26_163709); 7) Aspire Leaders Program Certificate (Harvard faculty–founded); 8) Internshala Student Partner (ISP) Appointment Letter; 9) AICTE Data Analytics Virtual Internship; 10) SEBI & NISM Investor Awareness (NISM20260000378433-001); 11) Mastercard Cybersecurity Job Simulation; 12) PNC Bank Financial Services Simulation.`;
       } else if (lower.includes('project') || lower.includes('github') || lower.includes('repo') || lower.includes('code')) {
-        reply = `Praveen has 5 active open-source repositories on GitHub (@praveenprajapati7850):
-1. portfolo-praveen-kumar: Full-stack React 19 & TypeScript portfolio application.
-2. ask-praveen-ai: AI portfolio assistant built with Google Gemini 2.5 Flash, React 19, TypeScript, and Express.
-3. SEASONAL-AGRICULTURE-PERFORMANCE-ANALYSIS: Data analytics model analyzing seasonal crop yields and monsoon patterns using Python, Pandas, and Matplotlib.
-4. Airbnb-Hotel-Booking-Analysis: Exploratory data analysis (EDA) investigating booking lead times, cancellation risk, and pricing elasticity.
-5. praveenprajapati7850.github.io: Interactive developer portfolio and deployment architecture.
-You can view the interactive charts and clone commands in the Projects & Code Repositories section!`;
+        reply = `Praveen's top 3 featured engineering and data analytics projects are:
+1. UPI QR Code Splitter (Android App): An Android application built with Kotlin, Jetpack Compose, and Google ML Kit that splits payments up to ₹10,000 into sub-₹2,000 QR codes to bypass banking surcharges and OTP friction.
+2. Seasonal Agriculture Performance Analysis: Predictive data analytics model linking monsoon rainfall variations to crop yields across Indian farming zones (Python, Pandas, Matplotlib, Seaborn).
+3. Airbnb Hotel Booking & Hospitality Analytics: Exploratory data analysis on 10,000+ booking entries evaluating lead times, cancellation patterns, and pricing dynamics (Python, Pandas, Seaborn).
+All 3 projects are prominently featured on his official ATS Resume and GitHub profile!`;
       } else if (lower.includes('skill') || lower.includes('python') || lower.includes('fintech') || lower.includes('tools')) {
         reply = `Praveen specializes in Python programming, SQL & databases, Pandas, Matplotlib, Power BI analytics, FinTech modeling, and AI/LLM applications.`;
       } else if (lower.includes('qr') || lower.includes('scan') || lower.includes('vcard') || lower.includes('card') || lower.includes('whatsapp')) {

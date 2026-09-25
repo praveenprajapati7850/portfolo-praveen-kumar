@@ -2,6 +2,29 @@ import { GitHubRepoItem } from '../types';
 
 export const defaultGitHubRepos: GitHubRepoItem[] = [
   {
+    id: 'repo-upi-qr-splitter',
+    name: 'UPI--QR-CODE-Splitter',
+    fullName: 'praveenprajapati7850/UPI--QR-CODE-Splitter',
+    description:
+      'An Android app built with Jetpack Compose & Google ML Kit to split large UPI payments (up to ₹10,000) into safe consecutive sub-₹2,000 QR codes, avoiding bank surcharges and OTP friction.',
+    htmlUrl: 'https://github.com/praveenprajapati7850/UPI--QR-CODE-Splitter',
+    language: 'Kotlin',
+    languageColor: '#A97BFF',
+    category: 'AI & Full-Stack',
+    techStack: ['Kotlin', 'Jetpack Compose', 'Google ML Kit', 'CameraX', 'Android SDK', 'Material 3'],
+    stars: 0,
+    forks: 0,
+    sizeKb: 117,
+    updatedAt: 'Sep 2026',
+    defaultBranch: 'main',
+    cloneUrl: 'https://github.com/praveenprajapati7850/UPI--QR-CODE-Splitter.git',
+    highlights: [
+      'Built with Jetpack Compose & Google ML Kit to scan merchant UPI QR codes via CameraX in real time',
+      'Splits transactions up to ₹10,000 into sub-₹2,000 QR codes to bypass banking surcharges and OTP friction',
+      'Implements Smart Max Split and Balanced Equal Split with direct UPI deep linking to GPay & PhonePe',
+    ],
+  },
+  {
     id: 'repo-ask-praveen-ai',
     name: 'ask-praveen-ai',
     fullName: 'praveenprajapati7850/ask-praveen-ai',

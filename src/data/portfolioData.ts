@@ -147,6 +147,26 @@ export const defaultPortfolioData: PortfolioData = {
   ],
   projects: [
     {
+      id: 'proj-upi-qr-splitter',
+      title: 'UPI QR Code Splitter — Android App',
+      client: 'Android & FinTech Project (Open Source)',
+      category: 'Fintech & Android',
+      image: '/images/work/upi-fintech-project.svg',
+      link: 'https://github.com/praveenprajapati7850/UPI--QR-CODE-Splitter',
+      documentType: 'Android Mobile Application',
+      issueDate: 'Sep 2026',
+      credentialId: 'UPI-QR-SPLITTER-2026',
+      signatories: 'Praveen Kumar (Android Developer)',
+      description:
+        'Lightweight Android application built with Jetpack Compose and Google ML Kit that splits large UPI payments (up to ₹10,000) into safe consecutive sub-₹2,000 QR codes, bypassing extra OTP steps, bank surcharge limits, and daily merchant caps without friction.',
+      tags: ['Kotlin', 'Jetpack Compose', 'Google ML Kit', 'CameraX', 'Android SDK', 'UPI Payments'],
+      keyHighlights: [
+        'Real-time merchant UPI QR scanning with CameraX and Google ML Kit Barcode Vision',
+        'Smart Max Split & Equal Split algorithms to generate safe sub-₹2,000 payment codes',
+        'Direct one-tap UPI deep linking to Google Pay, PhonePe, Paytm, and BHIM',
+      ],
+    },
+    {
       id: 'proj-techfest-iitb',
       title: 'College Ambassador Offer Letter',
       client: 'Techfest, IIT Bombay',
