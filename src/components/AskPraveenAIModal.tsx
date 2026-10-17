@@ -12,6 +12,91 @@ interface Message {
   text: string;
 }
 
+// 1. Centralized response rules (keeps complexity low and easily maintainable)
+const RESPONSE_RULES: { keywords: string[]; getReply: (personal: PersonalInfo) => string }[] = [
+  {
+    keywords: ['upi', 'splitter', 'qr code splitter'],
+    getReply: () =>
+      `Praveen engineered the "UPI QR Code Splitter", an Android application built with Kotlin, Jetpack Compose, and Google ML Kit. It scans merchant UPI QR codes using CameraX and splits large transactions (up to ₹10,000) into safe consecutive sub-₹2,000 QR codes (e.g. ₹1,999, ₹1,998) to bypass extra OTP steps, bank surcharge limits, and daily caps, complete with direct deep links to Google Pay, PhonePe, and Paytm.`,
+  },
+  {
+    keywords: ['degree', 'university', 'education', 'college', 'study'],
+    getReply: () =>
+      `Praveen is pursuing an Integrated B.Tech + MBA in Computer Science & Business Systems (CSBS) at Pondicherry University. His curriculum bridges software engineering, enterprise algorithms, financial analytics, and strategic business management.`,
+  },
+  {
+    keywords: ['techfest', 'iit bombay', 'offer letter'],
+    getReply: () =>
+      `Praveen received an official Offer Letter as College Ambassador for Techfest, IIT Bombay (2026-27), Asia's Largest Science & Technology Festival, driving campus innovation and outreach!`,
+  },
+  {
+    keywords: ['vidyadhan', 'scholarship', 'sarojini'],
+    getReply: () =>
+      `Praveen is a recognized Vidyadhan Scholar, selected for the prestigious merit-based Vidyadhan Scholarship by the Sarojini Damodaran Foundation (SDF) in recognition of academic distinction, strong leadership, and high scholastic potential.`,
+  },
+  {
+    keywords: ['aspire', 'harvard', 'leader'],
+    getReply: () =>
+      `Praveen was selected for the prestigious Aspire Leaders Program 2026, an international leadership program founded by Harvard University faculty, developing cross-cultural leadership and communication skills.`,
+  },
+  {
+    keywords: ['composit', 'iit kharagpur', 'ideathon'],
+    getReply: () =>
+      `Praveen was an Ideathon Finalist at the 31st Edition of COMPOSIT, organized by the Society of Metallurgical Engineers at IIT Kharagpur, demonstrating innovative problem-solving and tech solutions.`,
+  },
+  {
+    keywords: ['isro', 'space', 'quiz'],
+    getReply: () =>
+      `Praveen ranked in the Top 100 nationwide winners of the ISRO National Space Day Quiz in November 2025! As part of this national honor, he was invited for an official delegation visit to the Indian Space Research Organisation (ISRO) facility and launch complex, touring rocket launch vehicles including PSLV and GSLV models.`,
+  },
+  {
+    keywords: ['tata', 'crucible'],
+    getReply: () =>
+      `Praveen served as a Tata Crucible Campus Ambassador representing Pondicherry University under the Tata Crucible Campus Ambassador Programme, earning an official Certificate of Appreciation.`,
+  },
+  {
+    keywords: ['certif', 'credential', 'forage', 'sebi', 'mastercard', 'offer'],
+    getReply: () =>
+      `Praveen holds verified credentials including: 1) Vidyadhan Scholarship Award (Sarojini Damodaran Foundation); 2) Techfest IIT Bombay College Ambassador Offer Letter; 3) ISRO Space Day Quiz Top 100 Winner & ISRO Delegation Visit (November 2025); 4) Tata Crucible Campus Ambassador Certificate; 5) IIT Kharagpur COMPOSIT Ideathon Finalist; 6) Vodafone Idea & VOIS Data Visualization (ID: VFLMS26_163709); 7) Aspire Leaders Program Certificate (Harvard faculty–founded); 8) Internshala Student Partner (ISP) Appointment Letter; 9) AICTE Data Analytics Virtual Internship; 10) SEBI & NISM Investor Awareness (NISM20260000378433-001); 11) Mastercard Cybersecurity Job Simulation; 12) PNC Bank Financial Services Simulation.`,
+  },
+  {
+    keywords: ['project', 'github', 'repo', 'code'],
+    getReply: () =>
+      `Praveen's top 3 featured engineering and data analytics projects are:
+1. UPI QR Code Splitter (Android App): An Android application built with Kotlin, Jetpack Compose, and Google ML Kit that splits payments up to ₹10,000 into sub-₹2,000 QR codes to bypass banking surcharges and OTP friction.
+2. Seasonal Agriculture Performance Analysis: Predictive data analytics model linking monsoon rainfall variations to crop yields across Indian farming zones (Python, Pandas, Matplotlib, Seaborn).
+3. Airbnb Hotel Booking & Hospitality Analytics: Exploratory data analysis on 10,000+ booking entries evaluating lead times, cancellation patterns, and pricing dynamics (Python, Pandas, Seaborn).
+All 3 projects are prominently featured on his official ATS Resume and GitHub profile!`,
+  },
+  {
+    keywords: ['skill', 'python', 'fintech', 'tools'],
+    getReply: () =>
+      `Praveen specializes in Python programming, SQL & databases, Pandas, Matplotlib, Power BI analytics, FinTech modeling, and AI/LLM applications.`,
+  },
+  {
+    keywords: ['qr', 'scan', 'vcard', 'card', 'whatsapp'],
+    getReply: () =>
+      `Praveen's portfolio features an interactive "Scan to Connect Hub" in the Contact section with live QR codes for: 1) LinkedIn Profile, 2) Digital vCard (1-tap Save Contact with phone & email), 3) Instant WhatsApp Chat (+91 7850909557), 4) GitHub profile, 5) Direct Email dispatch, and 6) ATS Resume PDF download. You can point your phone camera to scan or download high-resolution PNGs!`,
+  },
+  {
+    keywords: ['contact', 'email', 'phone', 'hire', 'reach'],
+    getReply: (personal) =>
+      `You can reach Praveen directly via email at ${personal.email} or call at ${personal.phone}. You can also connect on LinkedIn at https://www.linkedin.com/in/praveen-kumar-907443384, or use the interactive "Scan to Connect Hub" in the Contact section to scan QR codes for WhatsApp and vCard!`,
+  },
+];
+
+const DEFAULT_REPLY = `Praveen Kumar is an Integrated B.Tech + MBA (CSBS) student at Pondicherry University, Vidyadhan Scholar, College Ambassador for Techfest IIT Bombay 2026-27, ISRO National Space Day Quiz Top 100 Winner (November 2025), Ideathon Finalist at IIT Kharagpur COMPOSIT, and Aspire Leader. Check out his verified credentials in the Works section!`;
+
+// 2. Helper to match queries cleanly without huge if-else trees
+const getAIReply = (userText: string, personal: PersonalInfo): string => {
+  const lower = userText.toLowerCase();
+  const matchedRule = RESPONSE_RULES.find((rule) =>
+    rule.keywords.some((keyword) => lower.includes(keyword))
+  );
+
+  return matchedRule ? matchedRule.getReply(personal) : DEFAULT_REPLY;
+};
+
 export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -39,6 +124,7 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
     "How can I contact Praveen?",
   ];
 
+  // 3. Simplified handleAsk method
   const handleAsk = (userText: string) => {
     if (!userText.trim()) return;
 
@@ -46,45 +132,8 @@ export const AskPraveenAIModal: React.FC<AskPraveenAIModalProps> = ({ personal }
     setMessages((prev) => [...prev, newMsg]);
     setQuery('');
 
-    // Generate accurate contextual answers based on user's portfolio data
     setTimeout(() => {
-      let reply = '';
-      const lower = userText.toLowerCase();
-
-      if (lower.includes('upi') || lower.includes('splitter') || lower.includes('qr code splitter')) {
-        reply = `Praveen engineered the "UPI QR Code Splitter", an Android application built with Kotlin, Jetpack Compose, and Google ML Kit. It scans merchant UPI QR codes using CameraX and splits large transactions (up to ₹10,000) into safe consecutive sub-₹2,000 QR codes (e.g. ₹1,999, ₹1,998) to bypass extra OTP steps, bank surcharge limits, and daily caps, complete with direct deep links to Google Pay, PhonePe, and Paytm.`;
-      } else if (lower.includes('degree') || lower.includes('university') || lower.includes('education') || lower.includes('college') || lower.includes('study')) {
-        reply = `Praveen is pursuing an Integrated B.Tech + MBA in Computer Science & Business Systems (CSBS) at Pondicherry University. His curriculum bridges software engineering, enterprise algorithms, financial analytics, and strategic business management.`;
-      } else if (lower.includes('techfest') || lower.includes('iit bombay') || lower.includes('offer letter')) {
-        reply = `Praveen received an official Offer Letter as College Ambassador for Techfest, IIT Bombay (2026-27), Asia's Largest Science & Technology Festival, driving campus innovation and outreach!`;
-      } else if (lower.includes('vidyadhan') || lower.includes('scholarship') || lower.includes('sarojini')) {
-        reply = `Praveen is a recognized Vidyadhan Scholar, selected for the prestigious merit-based Vidyadhan Scholarship by the Sarojini Damodaran Foundation (SDF) in recognition of academic distinction, strong leadership, and high scholastic potential.`;
-      } else if (lower.includes('aspire') || lower.includes('harvard') || lower.includes('leader')) {
-        reply = `Praveen was selected for the prestigious Aspire Leaders Program 2026, an international leadership program founded by Harvard University faculty, developing cross-cultural leadership and communication skills.`;
-      } else if (lower.includes('composit') || lower.includes('iit kharagpur') || lower.includes('ideathon')) {
-        reply = `Praveen was an Ideathon Finalist at the 31st Edition of COMPOSIT, organized by the Society of Metallurgical Engineers at IIT Kharagpur, demonstrating innovative problem-solving and tech solutions.`;
-      } else if (lower.includes('isro') || lower.includes('space') || lower.includes('quiz')) {
-        reply = `Praveen ranked in the Top 100 nationwide winners of the ISRO National Space Day Quiz in November 2025! As part of this national honor, he was invited for an official delegation visit to the Indian Space Research Organisation (ISRO) facility and launch complex, touring rocket launch vehicles including PSLV and GSLV models.`;
-      } else if (lower.includes('tata') || lower.includes('crucible')) {
-        reply = `Praveen served as a Tata Crucible Campus Ambassador representing Pondicherry University under the Tata Crucible Campus Ambassador Programme, earning an official Certificate of Appreciation.`;
-      } else if (lower.includes('certif') || lower.includes('credential') || lower.includes('forage') || lower.includes('sebi') || lower.includes('mastercard') || lower.includes('offer')) {
-        reply = `Praveen holds verified credentials including: 1) Vidyadhan Scholarship Award (Sarojini Damodaran Foundation); 2) Techfest IIT Bombay College Ambassador Offer Letter; 3) ISRO Space Day Quiz Top 100 Winner & ISRO Delegation Visit (November 2025); 4) Tata Crucible Campus Ambassador Certificate; 5) IIT Kharagpur COMPOSIT Ideathon Finalist; 6) Vodafone Idea & VOIS Data Visualization (ID: VFLMS26_163709); 7) Aspire Leaders Program Certificate (Harvard faculty–founded); 8) Internshala Student Partner (ISP) Appointment Letter; 9) AICTE Data Analytics Virtual Internship; 10) SEBI & NISM Investor Awareness (NISM20260000378433-001); 11) Mastercard Cybersecurity Job Simulation; 12) PNC Bank Financial Services Simulation.`;
-      } else if (lower.includes('project') || lower.includes('github') || lower.includes('repo') || lower.includes('code')) {
-        reply = `Praveen's top 3 featured engineering and data analytics projects are:
-1. UPI QR Code Splitter (Android App): An Android application built with Kotlin, Jetpack Compose, and Google ML Kit that splits payments up to ₹10,000 into sub-₹2,000 QR codes to bypass banking surcharges and OTP friction.
-2. Seasonal Agriculture Performance Analysis: Predictive data analytics model linking monsoon rainfall variations to crop yields across Indian farming zones (Python, Pandas, Matplotlib, Seaborn).
-3. Airbnb Hotel Booking & Hospitality Analytics: Exploratory data analysis on 10,000+ booking entries evaluating lead times, cancellation patterns, and pricing dynamics (Python, Pandas, Seaborn).
-All 3 projects are prominently featured on his official ATS Resume and GitHub profile!`;
-      } else if (lower.includes('skill') || lower.includes('python') || lower.includes('fintech') || lower.includes('tools')) {
-        reply = `Praveen specializes in Python programming, SQL & databases, Pandas, Matplotlib, Power BI analytics, FinTech modeling, and AI/LLM applications.`;
-      } else if (lower.includes('qr') || lower.includes('scan') || lower.includes('vcard') || lower.includes('card') || lower.includes('whatsapp')) {
-        reply = `Praveen's portfolio features an interactive "Scan to Connect Hub" in the Contact section with live QR codes for: 1) LinkedIn Profile, 2) Digital vCard (1-tap Save Contact with phone & email), 3) Instant WhatsApp Chat (+91 7850909557), 4) GitHub profile, 5) Direct Email dispatch, and 6) ATS Resume PDF download. You can point your phone camera to scan or download high-resolution PNGs!`;
-      } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('hire') || lower.includes('reach')) {
-        reply = `You can reach Praveen directly via email at ${personal.email} or call at ${personal.phone}. You can also connect on LinkedIn at https://www.linkedin.com/in/praveen-kumar-907443384, or use the interactive "Scan to Connect Hub" in the Contact section to scan QR codes for WhatsApp and vCard!`;
-      } else {
-        reply = `Praveen Kumar is an Integrated B.Tech + MBA (CSBS) student at Pondicherry University, Vidyadhan Scholar, College Ambassador for Techfest IIT Bombay 2026-27, ISRO National Space Day Quiz Top 100 Winner (November 2025), Ideathon Finalist at IIT Kharagpur COMPOSIT, and Aspire Leader. Check out his verified credentials in the Works section!`;
-      }
-
+      const reply = getAIReply(userText, personal);
       setMessages((prev) => [
         ...prev,
         { id: (Date.now() + 1).toString(), sender: 'ai', text: reply },
