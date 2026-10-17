@@ -11,7 +11,6 @@ import {
   Copy,
   Check,
   ExternalLink,
-  Loader2,
   QrCode,
 } from 'lucide-react';
 
@@ -31,8 +30,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
     message: '',
   });
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [statusMessage, setStatusMessage] = useState<string>('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleCopyEmail = () => {
@@ -54,40 +51,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
   )}&body=${encodeURIComponent(
     `Hi Praveen,\n\n${formData.message.trim() \vert{}\vert{} 'I would like to get in touch regarding an opportunity / collaboration.'}\n\nName:${formData.name.trim() || 'N/A'}\nEmail: ${formData.email.trim() \vert{}\vert{} 'N/A'}\nPhone:${formData.phone.trim() || 'N/A'}`
   )}`;
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-    setStatusMessage('');
-
-    const payload = {
-      name: formData.name.trim(),
-      phone: formData.phone.trim() || 'Not specified',
-      email: formData.email.trim(),
-      subject: formData.subject.trim() || 'Portfolio Inquiry',
-      message: formData.message.trim(),
-    };
-
-    const pageclip = (window as any).Pageclip;
-
-    if (pageclip) {
-      pageclip.send(PAGECLIP_SITE_KEY, 'default', payload, (error: any) => {
-        if (!error) {
-          setStatus('success');
-          setStatusMessage(
-            `Thank you, ${formData.name}! Your message has been sent successfully via Pageclip.`
-          );
-          setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
-        } else {
-          setStatus('error');
-          setStatusMessage('Failed to send message via Pageclip. Please try sending directly via email.');
-        }
-      });
-    } else {
-      const formElement = e.target as HTMLFormElement;
-      formElement.submit();
-    }
-  };
 
   return (
     <section id="contact" className="no-print bg-white scroll-mt-24">
@@ -115,60 +78,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
             {/* Contact Form Container */}
             <div id="contact-form-container" className="flex flex-col">
-              {/* Success Notification */}
-              {status === 'success' && (
-                <div
-                  id="contact-success-alert"
-                  className="mb-6 p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 flex items-start gap-3 shadow-xs"
-                >
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-                  <div className="text-sm">
-                    <p className="font-semibold text-emerald-950 mb-0.5">Message Sent Successfully!</p>
-                    <p className="text-emerald-800 leading-relaxed">{statusMessage}</p>
-                  </div>
-                </div>
-              )}
-
-              {/* Error Notification */}
-              {status === 'error' && (
-                <div
-                  id="contact-error-alert"
-                  className="mb-6 p-4 rounded-xl bg-red-50 border border-red-300 text-red-900 flex items-start gap-3 shadow-xs"
-                >
-                  <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                  <div className="text-sm flex-1">
-                    <p className="font-semibold text-red-950 mb-0.5">Submission Notice</p>
-                    <p className="text-red-800 mb-3">{statusMessage}</p>
-                    <div className="flex flex-wrap gap-2">
-                      <a
-                        id="btn-error-mailto"
-                        href={mailtoHref}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-neutral-900 text-white text-xs font-medium hover:bg-[#fe4300] transition-colors"
-                      >
-                        <Mail className="w-3.5 h-3.5" />
-                        Open in Mail App
-                      </a>
-                      <a
-                        id="btn-error-gmail"
-                        href={gmailWebHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white border border-neutral-300 text-neutral-800 text-xs font-medium hover:border-[#fe4300] hover:text-[#fe4300] transition-colors"
-                      >
-                        Open in Gmail Web
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               <form
                 id="contact-form"
                 action={`https://send.pageclip.co/${PAGECLIP_SITE_KEY}`}
                 className="pageclip-form"
                 method="post"
-                onSubmit={handleSubmit}
               >
                 <div className="flex flex-col gap-6 sm:gap-7">
                   {/* Row 1: Name and Phone */}
@@ -261,21 +175,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                     <button
                       id="btn-contact-submit"
                       type="submit"
-                      disabled={status === 'submitting'}
-                      className="pageclip-form__submit resume-btn group py-3 sm:py-3.5 px-6 sm:px-8 border border-[#fe4300] rounded-full bg-white cursor-pointer shadow-xs disabled:opacity-60 transition-all"
+                      className="pageclip-form__submit resume-btn group py-3 sm:py-3.5 px-6 sm:px-8 border border-[#fe4300] rounded-full bg-white cursor-pointer shadow-xs transition-all"
                     >
                       <span className="relative z-10 flex items-center gap-2 text-base sm:text-lg font-medium text-[#fe4300] group-hover:text-white transition-colors duration-300">
-                        {status === 'submitting' ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            <span>Sending...</span>
-                          </>
-                        ) : (
-                          <>
-                            <span>Send Message</span>
-                            <Send size={16} className="transition-transform group-hover:translate-x-1" />
-                          </>
-                        )}
+                        <span>Send Message</span>
+                        <Send size={16} className="transition-transform group-hover:translate-x-1" />
                       </span>
                     </button>
 
