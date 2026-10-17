@@ -15,19 +15,6 @@ import {
   QrCode,
 } from 'lucide-react';
 
-declare global {
-  interface Window {
-    Pageclip?: {
-      send: (
-        siteKey: string,
-        formName: string,
-        data: Record<string, unknown>,
-        callback: (error: Error | null, response: unknown) => void
-      ) => void;
-    };
-  }
-}
-
 interface ContactSectionProps {
   personal: PersonalInfo;
 }
@@ -81,8 +68,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
       message: formData.message.trim(),
     };
 
-    if (window.Pageclip) {
-      window.Pageclip.send(PAGECLIP_SITE_KEY, 'default', payload, (error) => {
+    const pageclip = (window as any).Pageclip;
+
+    if (pageclip) {
+      pageclip.send(PAGECLIP_SITE_KEY, 'default', payload, (error: any) => {
         if (!error) {
           setStatus('success');
           setStatusMessage(
@@ -95,7 +84,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
         }
       });
     } else {
-      // Fallback: Submit form standard post if JS SDK hasn't loaded yet
       const formElement = e.target as HTMLFormElement;
       formElement.submit();
     }
@@ -141,7 +129,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                 </div>
               )}
 
-              {/* Error Notification with Direct Email Action */}
+              {/* Error Notification */}
               {status === 'error' && (
                 <div
                   id="contact-error-alert"
