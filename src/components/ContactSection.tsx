@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { PersonalInfo } from '../types';
 import { ScanToConnectHub } from './ScanToConnectHub';
 import {
-  CheckCircle2,
   Send,
   Mail,
   Phone,
   MapPin,
-  AlertCircle,
   Copy,
   Check,
   ExternalLink,
@@ -20,7 +18,6 @@ interface ContactSectionProps {
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
   const targetEmail = personal.email || 'praveenkumar78509@gmail.com';
-  const PAGECLIP_SITE_KEY = 'Un8XXxeNdmrm4yYBjofcUqi44Jcy6BDC';
 
   const [formData, setFormData] = useState({
     name: '',
@@ -56,7 +53,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
     <section id="contact" className="no-print bg-white scroll-mt-24">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="pt-14 sm:pt-20 md:pt-28 pb-16 md:pb-24">
-          {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-black pb-6 sm:pb-7 mb-8 sm:mb-12 md:mb-16">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 text-white text-xs font-semibold mb-2 shadow-xs">
@@ -76,16 +72,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 lg:gap-20 items-start">
-            {/* Contact Form Container */}
             <div id="contact-form-container" className="flex flex-col">
               <form
                 id="contact-form"
-                action={`https://send.pageclip.co/${PAGECLIP_SITE_KEY}`}
+                action="https://send.pageclip.co/Un8XXxeNdmrm4yYBjofcUqi44Jcy6BDC"
                 className="pageclip-form"
                 method="post"
               >
                 <div className="flex flex-col gap-6 sm:gap-7">
-                  {/* Row 1: Name and Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="name" className="text-sm font-medium text-neutral-800">
@@ -119,7 +113,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                     </div>
                   </div>
 
-                  {/* Row 2: Email and Subject */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="email" className="text-sm font-medium text-neutral-800">
@@ -153,7 +146,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                     </div>
                   </div>
 
-                  {/* Row 3: Message */}
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="message" className="text-sm font-medium text-neutral-800">
                       Message <span className="text-[#fe4300]">*</span>
@@ -170,7 +162,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                     />
                   </div>
 
-                  {/* Submit Button & Direct Compose Links */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
                     <button
                       id="btn-contact-submit"
@@ -189,7 +180,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                         id="btn-direct-compose-link"
                         href={mailtoHref}
                         className="inline-flex items-center gap-1 font-medium text-neutral-800 hover:text-[#fe4300] underline transition-colors"
-                        title="Open message draft in your system mail client"
                       >
                         <Mail className="w-3.5 h-3.5" />
                         Draft in Email App
@@ -200,7 +190,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
               </form>
             </div>
 
-            {/* Right Side: Direct Contact Details & Channels */}
             <div id="contact-info-panel" className="flex flex-col gap-6 md:gap-8 pt-2 md:pt-0">
               <ScanToConnectHub personal={personal} />
 
