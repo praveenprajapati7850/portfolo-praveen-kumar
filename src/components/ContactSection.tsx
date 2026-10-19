@@ -35,19 +35,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const mailtoHref = `mailto:${targetEmail}?subject=${encodeURIComponent(
-    formData.subject.trim() || `Portfolio Contact from ${formData.name.trim() || 'Visitor'}`
-  )}&body=${encodeURIComponent(
-    `Hi Praveen,\n\n${formData.message.trim() \vert{}\vert{} 'I would like to get in touch regarding an opportunity / collaboration.'}\n\nName:${formData.name.trim() || 'N/A'}\nEmail: ${formData.email.trim() \vert{}\vert{} 'N/A'}\nPhone:${formData.phone.trim() || 'N/A'}`
-  )}`;
+  const mailSubject = formData.subject.trim() ? formData.subject.trim() : 'Portfolio Contact';
+  const mailMessage = formData.message.trim() ? formData.message.trim() : 'I would like to get in touch.';
+  const mailName = formData.name.trim() ? formData.name.trim() : 'N/A';
+  const mailEmail = formData.email.trim() ? formData.email.trim() : 'N/A';
+  const mailPhone = formData.phone.trim() ? formData.phone.trim() : 'N/A';
 
-  const gmailWebHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-    targetEmail
-  )}&su=${encodeURIComponent(
-    formData.subject.trim() || `Portfolio Contact from ${formData.name.trim() || 'Visitor'}`
-  )}&body=${encodeURIComponent(
-    `Hi Praveen,\n\n${formData.message.trim() \vert{}\vert{} 'I would like to get in touch regarding an opportunity / collaboration.'}\n\nName:${formData.name.trim() || 'N/A'}\nEmail: ${formData.email.trim() \vert{}\vert{} 'N/A'}\nPhone:${formData.phone.trim() || 'N/A'}`
-  )}`;
+  const bodyContent = `Hi Praveen,\n\n${mailMessage}\n\nName: ${mailName}\nEmail: ${mailEmail}\nPhone: ${mailPhone}`;
+
+  const mailtoHref = `mailto:${targetEmail}?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(bodyContent)}`;
+  const gmailWebHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(targetEmail)}&su=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(bodyContent)}`;
 
   return (
     <section id="contact" className="no-print bg-white scroll-mt-24">
