@@ -267,4 +267,75 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ personal }) => {
                       Phone / WhatsApp
                     </p>
                     <a
-                      id="link
+                      id="link-direct-phone"
+                      href={`tel:${personal.phone.replace(/\s+/g, '')}`}
+                      className="text-base font-semibold text-neutral-900 hover:text-[#fe4300] transition-colors"
+                    >
+                      {personal.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-700 shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
+                      Locations
+                    </p>
+                    <p className="text-sm font-medium text-neutral-800">
+                      {personal.location} (Pondicherry University Campus &amp; Rajasthan)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div id="social-profiles-container" className="pt-2 border-t border-neutral-200">
+                <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">
+                  Professional Networks
+                </p>
+                <div className="flex flex-wrap gap-2.5">
+                  <a
+                    id="link-contact-linkedin"
+                    href={personal.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-xs font-medium text-neutral-800 transition-colors"
+                  >
+                    <span>LinkedIn Profile</span>
+                    <ExternalLink className="w-3 h-3 text-neutral-400" />
+                  </a>
+                  <a
+                    id="link-contact-github"
+                    href={
+                      personal.socials.github && personal.socials.github !== 'https://github.com' && personal.socials.github !== 'https://github.com/'
+                        ? personal.socials.github
+                        : 'https://github.com/praveenprajapati7850'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-xs font-medium text-neutral-800 transition-colors"
+                  >
+                    <span>GitHub Profile</span>
+                    <ExternalLink className="w-3 h-3 text-neutral-400" />
+                  </a>
+                  <a
+                    id="link-contact-ambassador"
+                    href="https://www.techfest.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 text-xs font-medium text-neutral-800 transition-colors"
+                  >
+                    <span>Techfest IIT Bombay</span>
+                    <ExternalLink className="w-3 h-3 text-neutral-400" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
