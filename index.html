@@ -4,53 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Primary Meta Tags -->
-    <title>Praveen Kumar Verma | Software Developer</title>
-    <meta name="title" content="Praveen Kumar Verma | Software Developer" />
-    <meta name="description" content="Personal portfolio of Praveen Kumar Verma, a software developer and CSBS student at Pondicherry University. Explore my projects, skills, and professional profiles." />
-    <meta name="keywords" content="Praveen Kumar, Praveen Kumar Verma, Portfolio, Software Developer, CSBS, FinTech, Data Analytics, React, TypeScript, Pondicherry University, ATS Resume" />
+    <!-- Primary Meta Tags (Optimized for <60 chars Title & <155 chars / <960px Description) -->
+    <title>Praveen Kumar Verma | Software Developer & CSBS Portfolio</title>
+    <meta name="title" content="Praveen Kumar Verma | Software Developer & CSBS Portfolio" />
+    <meta name="description" content="Portfolio of Praveen Kumar Verma, Software Developer and CSBS student at Pondicherry University. View FinTech, React, TypeScript & Data Analytics work." />
+    <meta name="keywords" content="Praveen Kumar Verma, Praveen Kumar, Software Developer Portfolio, CSBS Pondicherry University, FinTech Developer, Data Analytics, React, TypeScript, Full Stack Developer" />
     <meta name="author" content="Praveen Kumar Verma" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="theme-color" content="#fe4300" />
-    <link rel="canonical" href="https://praveenkumarverma.me" />
+    <link rel="canonical" href="https://praveenkumarverma.me/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" type="image/svg+xml" href="/images/logo/logo.svg" />
 
     <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://praveenkumarverma.me" />
-    <meta property="og:title" content="Praveen Kumar Verma | Software Developer" />
-    <meta property="og:description" content="Personal portfolio of Praveen Kumar Verma, a software developer and CSBS student at Pondicherry University. Explore my projects, skills, and professional profiles." />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://praveenkumarverma.me/" />
+    <meta property="og:title" content="Praveen Kumar Verma | Software Developer & CSBS Portfolio" />
+    <meta property="og:description" content="Portfolio of Praveen Kumar Verma, Software Developer and CSBS student at Pondicherry University. View FinTech, React, TypeScript & Data Analytics work." />
     <meta property="og:image" content="https://praveenkumarverma.me/images/praveen-portrait.jpg" />
-    <meta property="og:site_name" content="Praveen Kumar Portfolio" />
+    <meta property="og:site_name" content="Praveen Kumar Verma Portfolio" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://praveenkumarverma.me" />
-    <meta name="twitter:title" content="Praveen Kumar Verma | Software Developer" />
-    <meta name="twitter:description" content="Personal portfolio of Praveen Kumar Verma, a software developer and CSBS student at Pondicherry University. Explore my projects, skills, and professional profiles." />
+    <meta name="twitter:url" content="https://praveenkumarverma.me/" />
+    <meta name="twitter:title" content="Praveen Kumar Verma | Software Developer & CSBS Portfolio" />
+    <meta name="twitter:description" content="Portfolio of Praveen Kumar Verma, Software Developer and CSBS student at Pondicherry University. View FinTech, React, TypeScript & Data Analytics work." />
     <meta name="twitter:image" content="https://praveenkumarverma.me/images/praveen-portrait.jpg" />
 
-    <!-- Google Person Structured Data (JSON-LD) -->
+    <!-- Google Structured Data (ProfilePage + Person + WebSite JSON-LD) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://praveenkumarverma.me/#person",
-        "name": "Praveen Kumar",
-        "alternateName": "Praveen Kumar Verma",
-        "url": "https://praveenkumarverma.me",
-        "image": "https://praveenkumarverma.me/images/praveen-portrait.jpg",
-        "jobTitle": "Software Developer & CSBS Student",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Pondicherry University"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/praveen-kumar-907443384",
-          "https://github.com/praveenprajapati7850"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://praveenkumarverma.me/#website",
+            "url": "https://praveenkumarverma.me/",
+            "name": "Praveen Kumar Verma Portfolio",
+            "description": "Personal portfolio of Praveen Kumar Verma, Software Developer and CSBS student at Pondicherry University."
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://praveenkumarverma.me/#profilepage",
+            "url": "https://praveenkumarverma.me/",
+            "name": "Praveen Kumar Verma | Software Developer & CSBS Portfolio",
+            "isPartOf": {
+              "@id": "https://praveenkumarverma.me/#website"
+            },
+            "mainEntity": {
+              "@id": "https://praveenkumarverma.me/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://praveenkumarverma.me/#person",
+            "name": "Praveen Kumar Verma",
+            "alternateName": "Praveen Kumar",
+            "url": "https://praveenkumarverma.me/",
+            "image": "https://praveenkumarverma.me/images/praveen-portrait.jpg",
+            "jobTitle": "Software Developer & CSBS Student",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Pondicherry University"
+            },
+            "knowsAbout": [
+              "Software Development",
+              "React",
+              "TypeScript",
+              "FinTech",
+              "Data Analytics",
+              "Computer Science and Business Systems"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/praveen-kumar-907443384",
+              "https://github.com/praveenprajapati7850"
+            ]
+          }
         ]
       }
     </script>
@@ -64,7 +95,52 @@
     <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen" />
   </head>
   <body class="font-sans antialiased bg-white text-[#0a0a0a] selection:bg-[#fe4300] selection:text-white">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered SEO Content for Search Crawlers (Automatically replaced when React mounts) -->
+      <main style="max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; font-family: 'Bricolage Grotesque', sans-serif;">
+        <header>
+          <h1>Praveen Kumar Verma — Software Developer &amp; CSBS Student</h1>
+          <p>
+            Welcome to the official portfolio of <strong>Praveen Kumar Verma</strong> (Praveen Kumar), a Software Developer and Computer Science &amp; Business Systems (CSBS) student at <strong>Pondicherry University</strong> building scalable web applications, FinTech solutions, and data analytics tools using React, TypeScript, Python, and modern full-stack technologies.
+          </p>
+        </header>
+
+        <section>
+          <h2>About Praveen Kumar Verma</h2>
+          <p>
+            Praveen Kumar Verma specializes in full-stack software engineering, financial technology (FinTech), and data-driven product development. Studying Computer Science and Business Systems at Pondicherry University, he bridges software architecture with business analytics to build fast, accessible, and user-centric digital products.
+          </p>
+        </section>
+
+        <section>
+          <h2>Technical Skills &amp; Core Stack</h2>
+          <ul>
+            <li><strong>Frontend &amp; Web Development:</strong> React, TypeScript, JavaScript (ES6+), HTML5, Tailwind CSS, Vite</li>
+            <li><strong>Backend &amp; Programming:</strong> Python, C++, SQL, RESTful APIs, Git &amp; GitHub Actions</li>
+            <li><strong>Domains &amp; Specializations:</strong> FinTech Applications, Data Analytics, Computer Science &amp; Business Systems (CSBS), ATS Resume &amp; Developer Tooling</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Featured Projects &amp; Portfolio Highlights</h2>
+          <p>
+            Explore full-stack software engineering projects, FinTech dashboards, automated certification and analytics workflows, and interactive web applications developed by Praveen Kumar Verma.
+          </p>
+          <p>
+            <a href="/Praveen_Kumar_Resume.pdf">Download Praveen Kumar Verma Resume (PDF)</a>
+          </p>
+        </section>
+
+        <section>
+          <h2>Connect &amp; Professional Profiles</h2>
+          <ul>
+            <li><a href="https://github.com/praveenprajapati7850" rel="me">GitHub Profile (@praveenprajapati7850)</a></li>
+            <li><a href="https://www.linkedin.com/in/praveen-kumar-907443384" rel="me">LinkedIn Profile (Praveen Kumar Verma)</a></li>
+            <li><a href="https://praveenkumarverma.me/">Official Portfolio Website (praveenkumarverma.me)</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
 
     <!-- Pageclip JavaScript SDK (Added here before </body>) -->
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
